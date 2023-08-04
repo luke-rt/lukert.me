@@ -1,13 +1,21 @@
-<script>
+<script lang="ts">
 	import "../app.scss";
 	import Link from "$lib/components/Link.svelte";
+	import { page } from "$app/stores";
+
+	let ypos = 0;
+	let y = 1;
+
+	$: splash = $page.url.pathname === "/" && ypos < y - 150;
 </script>
 
-<header>
+<svelte:window bind:scrollY={ypos} bind:outerHeight={y} />
+
+<header class:transparent={splash}>
 	<nav>
-		<Link large dark href="/">home</Link>
-		<Link large dark href="books">books</Link>
-		<Link large dark href="projects">projects</Link>
+		<Link large dark={splash} href="/">home</Link>
+		<Link large dark={splash} href="books">books</Link>
+		<Link large dark={splash} href="projects">projects</Link>
 	</nav>
 </header>
 
@@ -19,19 +27,22 @@
 
 <style lang="scss">
 	header {
-		position: absolute;
+		position: fixed;
+		top: 0;
+		left: 0;
 		width: 100%;
+		background-color: whitesmoke;
 		nav {
 			float: right;
+			margin-right: 5vw;
 		}
 	}
-
-	main {
-		display: block;
+	header.transparent {
+		background-color: transparent;
 	}
 
 	footer {
 		height: 50vh;
-		background-color: black;
+		background-color: $dark;
 	}
 </style>
