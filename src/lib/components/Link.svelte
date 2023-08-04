@@ -1,16 +1,16 @@
 <script lang="ts">
 	export let href: string;
 	export let refer = false;
-	export let active = false;
 	export let large = false;
+	export let dark = false;
 </script>
 
 <a
 	{href}
 	target={refer ? "_blank" : undefined}
 	rel={refer ? "noopener noreferrer" : undefined}
-	class:active
 	class:large
+	class:dark
 >
 	<slot />
 </a>
@@ -48,7 +48,7 @@
 	}
 
 	a.large {
-		font-size: 1.5em;
+		font-size: 1.2em;
 		font-weight: 400;
 		margin: 15px;
 
@@ -57,16 +57,13 @@
 		}
 	}
 
-	a.active {
-		color: dimgray;
-		transition: 0.3s;
+	a.dark {
+		color: lightgray;
 		&:after {
-			content: " ";
-			position: absolute;
-			display: block;
-			width: 100%;
-			height: 2px;
-			left: 0;
+			background-color: white;
+		}
+		&:hover {
+			color: white;
 		}
 	}
 </style>

@@ -16,7 +16,8 @@
 	}
 
 	#splash {
-		background-color: gainsboro;
+		color: gainsboro;
+		background-color: $dark;
 
 		h1 {
 			padding-top: 30vh;

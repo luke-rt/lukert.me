@@ -5,9 +5,9 @@
 
 <header>
 	<nav>
-		<Link large href="/">Home</Link>
-		<Link large href="books">Books</Link>
-		<Link large href="projects">Projects</Link>
+		<Link large dark href="/">home</Link>
+		<Link large dark href="books">books</Link>
+		<Link large dark href="projects">projects</Link>
 	</nav>
 </header>
 
