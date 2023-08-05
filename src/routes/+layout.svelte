@@ -29,6 +29,7 @@
 
 <style lang="scss">
 	header {
+		z-index: 1000;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -41,7 +42,7 @@
 			box-shadow: 0 5px 10px -1px lightgray;
 		}
 		.arrow {
-			border-color: $dark;
+			border-color: $dark-1;
 			margin-bottom: 1vh;
 			margin-left: 30px;
 			margin-right: 45px;
@@ -57,7 +58,7 @@
 			transform: rotate(45deg);
 			&:hover {
 				cursor: pointer;
-				border-color: dimgray;
+				border-color: $dark-2;
 			}
 		}
 		.arrow.dark {
@@ -76,6 +77,6 @@
 
 	footer {
 		height: 50vh;
-		background-color: $dark;
+		background-color: $dark-1;
 	}
 </style>

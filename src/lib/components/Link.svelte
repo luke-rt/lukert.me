@@ -20,12 +20,12 @@
 		position: relative;
 		display: inline-block;
 
-		color: black;
+		color: $dark-1;
 		font-weight: 600;
 
 		&:after {
 			content: " ";
-			background-color: gray;
+			background-color: $dark-2;
 			position: absolute;
 			width: 0%;
 			left: 50%;
@@ -34,7 +34,7 @@
 		}
 
 		&:hover {
-			color: dimgray;
+			color: $dark-2;
 			transition: 0.3s;
 			&:after {
 				content: " ";
@@ -48,9 +48,11 @@
 	}
 
 	a.large {
-		font-size: 1.2em;
-		font-weight: 400;
-		margin: 15px;
+		font-family: "League Spartan", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+		font-size: 1.4em;
+		margin-block: 15px;
+		margin-inline: 25px;
 
 		&:after {
 			margin-top: 5px;

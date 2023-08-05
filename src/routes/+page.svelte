@@ -1,5 +1,6 @@
 <script lang="ts">
 	import pfp from "$lib/assets/pfp.png";
+	import Link from "$lib/components/Link.svelte";
 </script>
 
 <svelte:head>
@@ -15,10 +16,10 @@
 		<img alt="Luke Tong" src={pfp}/>
 		<div>
 			<h3>
-				Hi! Welcome to my blog.
+				Hi! Welcome to my blog!
 			</h3>
 			<p>
-				I'm Luke, and I love reading, biking, and debate.
+				I'm Luke, and I love reading, biking, and <Link href="/">debate</Link>.
 				<br />
 				I'm currently a freshmen at University of Pennsylvania.
 			</p>
@@ -67,7 +68,7 @@
 <style lang="scss">
 	#splash {
 		height: 100vh;
-		background-color: $dark;
+		background-color: $dark-1;
 
 		h1 {
 			color: gainsboro;
