@@ -8,18 +8,18 @@
 	let ypos = 0;
 	let y = 1;
 
-	$: splash = $page.url.pathname === "/" && ypos < y - 150;
+	$: notsplash = $page.url.pathname != "/" || ypos > y - 150;
 </script>
 
 <svelte:window bind:scrollY={ypos} bind:outerHeight={y} />
 
-<header class:transparent={splash}>
+<header class:transparent={!notsplash}>
 	<nav>
-		<Link large dark={splash} href="/">home</Link>
-		<Link large dark={splash} href="books">books</Link>
-		<Link large dark={splash} href="projects">projects</Link>
+		<Link large dark={!notsplash} href="/">home</Link>
+		<Link large dark={!notsplash} href="books">books</Link>
+		<Link large dark={!notsplash} href="projects">projects</Link>
 	</nav>
-	<div class="arrow" class:dark={splash}>
+	<div class="arrow" class:dark={!notsplash}>
 	</div>
 </header>
 
@@ -32,9 +32,9 @@
 		<img src={logo} alt="Tree logo" />
 	</a>
 	<div>
-		<Link large dark refer href="https://github.com/luketio">LinkedIn</Link>
-		<Link large dark refer href="https://www.linkedin.com/in/luke-tong-73525a224/">Github</Link>
-		<Link large dark refer href="https://www.goodreads.com/user/show/165512138-luke-tong">GoodReads</Link>
+		<Link large dark refer href="https://github.com/luke-rt">Github</Link>
+		<Link large dark refer href="https://www.linkedin.com/in/luke-tong-73525a224/">LinkedIn</Link>
+		<Link large dark refer href="https://www.goodreads.com/user/show/165512138-luke-tong">Goodreads</Link>
 	</div>
 	<p>Copyright © 2023 Luke Tong</p>
 </footer>
