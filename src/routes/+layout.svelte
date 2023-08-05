@@ -17,6 +17,8 @@
 		<Link large dark={splash} href="books">books</Link>
 		<Link large dark={splash} href="projects">projects</Link>
 	</nav>
+	<div class="arrow" class:dark={splash}>
+	</div>
 </header>
 
 <main>
@@ -31,14 +33,45 @@
 		top: 0;
 		left: 0;
 		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: right;
 		background-color: whitesmoke;
-		nav {
-			float: right;
-			margin-right: 5vw;
+		&:hover {
+			box-shadow: 0 5px 10px -1px lightgray;
+		}
+		.arrow {
+			border-color: $dark;
+			margin-bottom: 1vh;
+			margin-left: 30px;
+			margin-right: 45px;
+
+			height: 1.2em;
+			width: 1.2em;
+
+			box-sizing: border-box;
+			border-style: solid;
+			border-width: 0px 3px 3px 0px;
+			border-radius: 10%;
+
+			transform: rotate(45deg);
+			&:hover {
+				cursor: pointer;
+				border-color: dimgray;
+			}
+		}
+		.arrow.dark {
+			border-color: lightgray;
+			&:hover {
+				border-color: white;
+			}
 		}
 	}
 	header.transparent {
 		background-color: transparent;
+		&:hover {
+			box-shadow: none;
+		}
 	}
 
 	footer {

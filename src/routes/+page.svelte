@@ -11,25 +11,62 @@
 </section>
 
 <section id="about">
-	<img alt="Luke Tong" src={pfp}/>
-	<div>
-		<h3>
-			Hi! Welcome to my blog.
-		</h3>
-		<p>
-			I'm Luke, and I love reading, biking, and debate.
-			<br />
-			I'm currently a freshmen at University of Pennsylvania.
-		</p>
+	<div class="top">
+		<img alt="Luke Tong" src={pfp}/>
+		<div>
+			<h3>
+				Hi! Welcome to my blog.
+			</h3>
+			<p>
+				I'm Luke, and I love reading, biking, and debate.
+				<br />
+				I'm currently a freshmen at University of Pennsylvania.
+			</p>
+		</div>
+	</div>
+	<div class="bottom">
+		<div>
+			<h3>Profile</h3>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan dictum nulla,
+				vel eleifend mauris tincidunt vitae. Donec semper vulputate scelerisque. Suspendisse
+				ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut fermentum
+				ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
+			</p>
+		</div>
+		<div>
+			<h3>Skills</h3>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan dictum nulla,
+				vel eleifend mauris tincidunt vitae. Donec semper vulputate scelerisque. Suspendisse
+				ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut fermentum
+				ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
+			</p>
+		</div>
+		<div>
+			<h3>Projects</h3>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan dictum nulla,
+				vel eleifend mauris tincidunt vitae. Donec semper vulputate scelerisque. Suspendisse
+				ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut fermentum
+				ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
+			</p>
+		</div>
+		<div>
+			<h3>Books</h3>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan dictum nulla,
+				vel eleifend mauris tincidunt vitae. Donec semper vulputate scelerisque. Suspendisse
+				ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut fermentum
+				ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
+			</p>
+		</div>
 	</div>
 </section>
 
 <style lang="scss">
-	section {
-		height: 100vh;
-	}
-
 	#splash {
+		height: 100vh;
 		background-color: $dark;
 
 		h1 {
@@ -40,14 +77,30 @@
 	}
 
 	#about {
-		display: flex;
-		flex-direction: horizontal;
+		.top {
+			display: flex;
+			flex-direction: horizontal;
+			justify-content: center;
+			img {
+				width: 150px;
+				height: 150px;
+				border-radius: 50%;
+				margin-right: 30px;
+			}
+		}
+		.bottom {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			grid-row-gap: 50px;
+			padding-top: 30px;
+			width: 70vw;
+			margin-inline: auto;
 
-		img {
-			width: 200px;
-			height: 200px;
-			border-radius: 50%;
-			margin-right: 5vw;
+			& > div {
+				width: 400px;
+				margin-inline: auto;
+			}
 		}
 	}
 </style>
