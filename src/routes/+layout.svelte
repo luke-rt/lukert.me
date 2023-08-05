@@ -1,7 +1,9 @@
 <script lang="ts">
 	import "../app.scss";
-	import Link from "$lib/components/Link.svelte";
 	import { page } from "$app/stores";
+	import Link from "$lib/components/Link.svelte";
+
+	import logo from "$lib/assets/logo.svg";
 
 	let ypos = 0;
 	let y = 1;
@@ -25,7 +27,17 @@
 	<slot />
 </main>
 
-<footer />
+<footer>
+	<a href="/">
+		<img src={logo} alt="Tree logo" />
+	</a>
+	<div>
+		<Link large dark refer href="https://github.com/luketio">LinkedIn</Link>
+		<Link large dark refer href="https://www.linkedin.com/in/luke-tong-73525a224/">Github</Link>
+		<Link large dark refer href="https://www.goodreads.com/user/show/165512138-luke-tong">GoodReads</Link>
+	</div>
+	<p>Copyright © 2023 Luke Tong</p>
+</footer>
 
 <style lang="scss">
 	header {
@@ -78,5 +90,29 @@
 	footer {
 		height: 50vh;
 		background-color: $dark-1;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		a {
+			margin: 20px;
+			margin-top: 80px;
+			img {
+				width: 120px;
+				height: 120px;
+				padding: 10px;
+				border-radius: 50%;
+
+				filter: drop-shadow(2px 2px 4px black);
+
+				&:hover {
+					background-color: $dark-1;
+					filter: drop-shadow(8px 8px 8px black);
+				}
+			}
+		}
+		p {
+			color: gainsboro;
+		}
 	}
 </style>

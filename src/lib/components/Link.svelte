@@ -60,7 +60,7 @@
 	}
 
 	a.dark {
-		color: lightgray;
+		color: gainsboro;
 		&:after {
 			background-color: white;
 		}

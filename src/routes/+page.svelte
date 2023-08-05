@@ -79,6 +79,7 @@
 	}
 
 	#about {
+		padding-block: 60px;
 		.top {
 			display: flex;
 			flex-direction: horizontal;
