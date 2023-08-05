@@ -12,7 +12,7 @@
 
 <section id="about">
 	<div class="top">
-		<img alt="Luke Tong" src={pfp}/>
+		<!-- <img alt="Luke Tong" src={pfp}/> -->
 		<div>
 			<h3>
 				Hi! Welcome to my blog.
@@ -73,6 +73,7 @@
 			color: gainsboro;
 			position: relative;
 			top: 20vh;
+			left: 6vw;
 		}
 	}
 
