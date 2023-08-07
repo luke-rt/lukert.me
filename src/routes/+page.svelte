@@ -1,5 +1,5 @@
 <script lang="ts">
-	import pfp from "$lib/assets/pfp.png";
+	import pfp from "$lib/assets/pfp.jpg";
 	import Link from "$lib/components/Link.svelte";
 </script>
 
@@ -13,7 +13,11 @@
 
 <section id="about">
 	<div class="top">
-		<img alt="Luke Tong" src={pfp}/>
+		<img
+			alt="Luke Tong"
+			src={pfp}
+			loading="lazy"
+		/>
 		<div>
 			<h3>
 				Hi! Welcome to my blog!
