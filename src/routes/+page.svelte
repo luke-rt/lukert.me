@@ -1,5 +1,5 @@
 <script lang="ts">
-	import pfp from "$lib/assets/pfp.jpg";
+	import pfp from "$lib/assets/pfp.png";
 	import Link from "$lib/components/Link.svelte";
 </script>
 
