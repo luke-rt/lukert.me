@@ -2,24 +2,23 @@
 	import "../app.scss";
 	import { page } from "$app/stores";
 	import Link from "$lib/components/Link.svelte";
-
 	import logo from "$lib/assets/logo.svg";
 
 	let ypos = 0;
 	let y = 1;
 
-	$: notsplash = $page.url.pathname != "/" || ypos > y - 150;
+	$: splash = $page.url.pathname == "/" && ypos < y - 150;
 </script>
 
 <svelte:window bind:scrollY={ypos} bind:outerHeight={y} />
 
-<header class:transparent={!notsplash}>
+<header class:transparent={!splash}>
 	<nav>
-		<Link large dark={!notsplash} href="/">home</Link>
-		<Link large dark={!notsplash} href="books">books</Link>
-		<Link large dark={!notsplash} href="projects">projects</Link>
+		<Link large light={!splash} href="/">home</Link>
+		<Link large light={!splash} href="books">books</Link>
+		<Link large light={!splash} href="projects">projects</Link>
 	</nav>
-	<div class="arrow" class:dark={!notsplash}>
+	<div class="arrow" class:light={!splash}>
 	</div>
 </header>
 
@@ -32,9 +31,9 @@
 		<img src={logo} alt="Tree logo" />
 	</a>
 	<div>
-		<Link large dark refer href="https://github.com/luke-rt">Github</Link>
-		<Link large dark refer href="https://www.linkedin.com/in/luke-tong-73525a224/">LinkedIn</Link>
-		<Link large dark refer href="https://www.goodreads.com/user/show/165512138-luke-tong">Goodreads</Link>
+		<Link large refer href="https://github.com/luke-rt">Github</Link>
+		<Link large refer href="https://www.linkedin.com/in/luke-tong-73525a224/">LinkedIn</Link>
+		<Link large refer href="https://www.goodreads.com/luke-rt">Goodreads</Link>
 	</div>
 	<p>Copyright © 2023 Luke Tong</p>
 </footer>
@@ -49,12 +48,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: right;
-		background-color: whitesmoke;
-		&:hover {
-			box-shadow: 0 5px 10px -1px lightgray;
-		}
+		background-color: transparent;
 		.arrow {
-			border-color: $dark-1;
+			border-color: lightgray;
 			margin-bottom: 1vh;
 			margin-left: 30px;
 			margin-right: 45px;
@@ -70,20 +66,20 @@
 			transform: rotate(45deg);
 			&:hover {
 				cursor: pointer;
-				border-color: $dark-2;
+				border-color: white;
 			}
 		}
-		.arrow.dark {
-			border-color: lightgray;
+		.arrow.light {
+			border-color: $dark-1;
 			&:hover {
-				border-color: white;
+				border-color: $dark-2;
 			}
 		}
 	}
 	header.transparent {
-		background-color: transparent;
+		background-color: whitesmoke;
 		&:hover {
-			box-shadow: none;
+			box-shadow: 0 5px 10px -1px lightgray;
 		}
 	}
 

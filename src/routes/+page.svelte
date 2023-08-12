@@ -23,7 +23,7 @@
 				Hi! Welcome to my blog!
 			</h3>
 			<p>
-				I'm Luke, and I love reading, biking, and <Link href="/">debate</Link>.
+				I'm Luke, and I love reading, biking, and <Link light href="/">debate</Link>.
 				<br />
 				I'm currently a freshmen at University of Pennsylvania.
 			</p>

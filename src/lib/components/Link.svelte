@@ -2,7 +2,7 @@
 	export let href: string;
 	export let refer = false;
 	export let large = false;
-	export let dark = false;
+	export let light = false;
 </script>
 
 <a
@@ -10,7 +10,7 @@
 	target={refer ? "_blank" : undefined}
 	rel={refer ? "noopener noreferrer" : undefined}
 	class:large
-	class:dark
+	class:light
 >
 	<slot />
 </a>
@@ -20,12 +20,12 @@
 		position: relative;
 		display: inline-block;
 
-		color: $dark-1;
+		color: gainsboro;
 		font-weight: 600;
 
 		&:after {
 			content: " ";
-			background-color: $dark-2;
+			background-color: white;
 			position: absolute;
 			width: 0%;
 			left: 50%;
@@ -34,7 +34,7 @@
 		}
 
 		&:hover {
-			color: $dark-2;
+			color: white;
 			transition: 0.3s;
 			&:after {
 				content: " ";
@@ -59,13 +59,13 @@
 		}
 	}
 
-	a.dark {
-		color: gainsboro;
+	a.light {
+		color: $dark-1;
 		&:after {
-			background-color: white;
+			background-color: $dark-2;
 		}
 		&:hover {
-			color: white;
+			color: $dark-2;
 		}
 	}
 </style>
