@@ -5,20 +5,20 @@
 	import logo from "$lib/assets/logo.svg";
 
 	let ypos = 0;
-	let y = 1;
+	let y = 151;
 
 	$: splash = $page.url.pathname == "/" && ypos < y - 150;
 </script>
 
 <svelte:window bind:scrollY={ypos} bind:outerHeight={y} />
 
-<header class:transparent={!splash}>
+<header class:transparent={splash}>
 	<nav>
-		<Link large light={!splash} href="/">home</Link>
-		<Link large light={!splash} href="books">books</Link>
-		<Link large light={!splash} href="projects">projects</Link>
+		<Link large dark={splash} href="/">home</Link>
+		<Link large dark={splash} href="books">books</Link>
+		<Link large dark={splash} href="projects">projects</Link>
 	</nav>
-	<div class="arrow" class:light={!splash}>
+	<div class="arrow" class:dark={splash}>
 	</div>
 </header>
 
@@ -48,9 +48,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: right;
-		background-color: transparent;
+		background-color: whitesmoke;
 		.arrow {
-			border-color: lightgray;
+			border-color: $dark-1;
 			margin-bottom: 1vh;
 			margin-left: 30px;
 			margin-right: 45px;
@@ -66,20 +66,21 @@
 			transform: rotate(45deg);
 			&:hover {
 				cursor: pointer;
-				border-color: white;
+				border-color: $dark-2;
+				box-shadow: 0 5px 10px -1px lightgray;
 			}
 		}
-		.arrow.light {
-			border-color: $dark-1;
+		.arrow.dark {
+			border-color: lightgray;
 			&:hover {
-				border-color: $dark-2;
+				border-color: white;
 			}
 		}
 	}
 	header.transparent {
-		background-color: whitesmoke;
+		background-color: transparent;
 		&:hover {
-			box-shadow: 0 5px 10px -1px lightgray;
+			box-shadow: none;
 		}
 	}
 
