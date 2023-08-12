@@ -31,9 +31,9 @@
 		<img src={logo} alt="Tree logo" />
 	</a>
 	<div>
-		<Link large refer href="https://github.com/luke-rt">Github</Link>
-		<Link large refer href="https://www.linkedin.com/in/luke-tong-73525a224/">LinkedIn</Link>
-		<Link large refer href="https://www.goodreads.com/luke-rt">Goodreads</Link>
+		<Link large dark refer href="https://github.com/luke-rt">Github</Link>
+		<Link large dark refer href="https://www.linkedin.com/in/luke-tong-73525a224/">LinkedIn</Link>
+		<Link large dark refer href="https://www.goodreads.com/luke-rt">Goodreads</Link>
 	</div>
 	<p>Copyright © 2023 Luke Tong</p>
 </footer>
