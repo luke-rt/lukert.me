@@ -4,13 +4,13 @@
 
 <svelte:head>
 	<title>Error {$page.status}</title>
-	<meta name="description" content={`Error ${$page.status}: ${$page.error.message}`} />
+	<meta name="description" content={`Error ${$page.status}: ${$page.error?.message}`} />
 </svelte:head>
 
 <div id="error">
 	<h1>Something went wrong :(</h1>
 	<h2>Error {$page.status}</h2>
-	<h3>{$page.error.message}</h3>
+	<h3>{$page.error?.message}</h3>
 </div>
 
 <style lang="scss">

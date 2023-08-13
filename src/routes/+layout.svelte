@@ -49,6 +49,10 @@
 		align-items: center;
 		justify-content: right;
 		background-color: whitesmoke;
+		&:hover {
+			box-shadow: 0 5px 10px -1px lightgray;
+		}
+
 		.arrow {
 			border-color: $dark-1;
 			margin-bottom: 1vh;
@@ -67,7 +71,6 @@
 			&:hover {
 				cursor: pointer;
 				border-color: $dark-2;
-				box-shadow: 0 5px 10px -1px lightgray;
 			}
 		}
 		.arrow.dark {
@@ -100,6 +103,7 @@
 				padding: 10px;
 				border-radius: 50%;
 
+				transition: 0.3s;
 				filter: drop-shadow(2px 2px 4px black);
 
 				&:hover {
