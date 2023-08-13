@@ -1,5 +1,5 @@
 <script lang="ts">
-	import pfp from "$lib/assets/pfp.png";
+	import pfp from "$lib/assets/pfp.webp";
 	import Link from "$lib/components/Link.svelte";
 </script>
 
@@ -19,11 +19,11 @@
 			loading="lazy"
 		/>
 		<div>
-			<h3>
+			<h2>
 				Hi! Welcome to my blog!
-			</h3>
+			</h2>
 			<p>
-				I'm Luke, and I love reading, biking, and <Link light href="/">debate</Link>.
+				I'm Luke, and I love reading, biking, and <Link href="/">debate</Link>.
 				<br />
 				I'm currently a freshmen at University of Pennsylvania.
 			</p>
