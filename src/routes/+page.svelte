@@ -1,5 +1,6 @@
 <script lang="ts">
 	import pfp from "$lib/assets/pfp.webp";
+	import Button from "$lib/components/Button.svelte";
 	import Link from "$lib/components/Link.svelte";
 </script>
 

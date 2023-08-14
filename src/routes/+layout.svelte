@@ -2,6 +2,7 @@
 	import "../app.scss";
 	import { page } from "$app/stores";
 	import Link from "$lib/components/Link.svelte";
+	import Button from "$lib/components/Button.svelte";
 	import logo from "$lib/assets/logo.svg";
 
 	let ypos = 0;
@@ -17,9 +18,8 @@
 		<Link large dark={splash} href="/">home</Link>
 		<Link large dark={splash} href="books">books</Link>
 		<Link large dark={splash} href="projects">projects</Link>
+		<Button dark={splash}>Contact</Button>
 	</nav>
-	<div class="arrow" class:dark={splash}>
-	</div>
 </header>
 
 <main>
@@ -28,7 +28,7 @@
 
 <footer>
 	<a href="/">
-		<img src={logo} alt="Tree logo" />
+		<img src={logo} alt="Tree logo" loading="lazy" />
 	</a>
 	<div>
 		<Link large dark refer href="https://github.com/luke-rt">Github</Link>
@@ -49,35 +49,11 @@
 		align-items: center;
 		justify-content: right;
 		background-color: whitesmoke;
+		nav {
+			padding-right: 5vw;
+		}
 		&:hover {
-			box-shadow: 0 5px 10px -1px lightgray;
-		}
-
-		.arrow {
-			border-color: $dark-1;
-			margin-bottom: 1vh;
-			margin-left: 30px;
-			margin-right: 45px;
-
-			height: 1.2em;
-			width: 1.2em;
-
-			box-sizing: border-box;
-			border-style: solid;
-			border-width: 0px 3px 3px 0px;
-			border-radius: 10%;
-
-			transform: rotate(45deg);
-			&:hover {
-				cursor: pointer;
-				border-color: $dark-2;
-			}
-		}
-		.arrow.dark {
-			border-color: lightgray;
-			&:hover {
-				border-color: white;
-			}
+			box-shadow: 0 5px 10px -1px gray;
 		}
 	}
 	header.transparent {
