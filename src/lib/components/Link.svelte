@@ -20,7 +20,7 @@
 		position: relative;
 		display: inline-block;
 
-		color: $dark-1;
+		color: $dark-2;
 		font-weight: 600;
 
 		&:after {
@@ -48,13 +48,19 @@
 	}
 
 	a.large {
+		color: $dark-1;
 		font-family: "League Spartan", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 		font-size: 1.4em;
 		margin-block: 15px;
 		margin-inline: 25px;
 
+		&:hover {
+			color: $dark-2;
+		}
+
 		&:after {
+			color: $dark-2;
 			margin-top: 5px;
 		}
 	}

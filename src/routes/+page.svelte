@@ -1,5 +1,6 @@
 <script lang="ts">
 	import pfp from "$lib/assets/pfp.webp";
+	import splash from "$lib/assets/splash.jpeg";
 	import Button from "$lib/components/Button.svelte";
 	import Link from "$lib/components/Link.svelte";
 </script>
@@ -9,6 +10,11 @@
 </svelte:head>
 
 <section id="splash">
+	<img
+		alt="Splash screen"
+		src={splash}
+		loading="eager"
+	/>
 	<h1>Luke Tong</h1>
 </section>
 
@@ -72,12 +78,18 @@
 
 <style lang="scss">
 	#splash {
+		display: flex;
 		height: 100vh;
 		background-color: $dark-1;
 
+		img {
+			flex-grow: 1;
+			object-fit: cover;
+		}
+
 		h1 {
-			color: gainsboro;
-			position: relative;
+			color: $dark-2;
+			position: absolute;
 			top: 20vh;
 			left: 6vw;
 		}

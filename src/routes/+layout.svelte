@@ -15,10 +15,10 @@
 
 <header class:transparent={splash}>
 	<nav>
-		<Link large dark={splash} href="/">home</Link>
-		<Link large dark={splash} href="books">books</Link>
-		<Link large dark={splash} href="projects">projects</Link>
-		<Button dark={splash}>Contact</Button>
+		<Link large href="/">home</Link>
+		<Link large href="books">books</Link>
+		<Link large href="projects">projects</Link>
+		<Button>Contact</Button>
 	</nav>
 </header>
 
