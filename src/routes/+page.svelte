@@ -1,7 +1,6 @@
 <script lang="ts">
 	import pfp from "$lib/assets/pfp.webp";
-	import splash from "$lib/assets/splash.jpeg";
-	import Button from "$lib/components/Button.svelte";
+	import splash from "$lib/assets/splash.webp";
 	import Link from "$lib/components/Link.svelte";
 </script>
 
@@ -84,6 +83,8 @@
 
 		img {
 			flex-grow: 1;
+			width: 100%;
+			height: 100%;
 			object-fit: cover;
 		}
 
