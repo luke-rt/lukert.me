@@ -25,13 +25,10 @@
 			</div>
 		</div>
 		<div class="right">
-			<h3>
-				{#if track.playing}
-					⏸
-				{:else}
-					⏵
-				{/if}
-			</h3>
+			<span class="one"></span>
+			<span class="two"></span>
+			<span class="three"></span>
+			<span class="four"></span>
 		</div>
 	</div>
 </a>
@@ -74,13 +71,45 @@
 			}
 		}
 		.right {
-			text-align: center;
-			border: solid gainsboro;
-			border-radius: 50%;
-			width: 31px;
-			margin-inline: 10px;
-			h3 {
-				color: gainsboro;
+			display: flex;
+  			flex-direction: row;
+  			justify-content: center;
+			align-items: center;
+			span {
+				height: 10px;
+				width: 6px;
+				background: gainsboro;
+				margin-inline: 1px;
+
+				&.one {
+					animation: stretch 0.5s linear infinite;
+				}
+				&.two {
+					animation: stretch 0.5s 0.25s linear infinite;
+				}
+				&.three {
+					animation: stretch 0.5s 0.1s linear infinite;
+				}
+				&.four {
+					animation: stretch 0.5s 0.15s linear infinite;
+				}
+			}
+			@keyframes stretch {
+				0% {
+					height: 10px;
+				}
+				25% {
+					height: 20px;
+				}
+				50% {
+					height: 40px;
+				}
+				75% {
+					height: 20px;
+				}
+				100% {
+					height: 10px;
+				}
 			}
 		}
 	}

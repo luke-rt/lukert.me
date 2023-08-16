@@ -44,6 +44,8 @@ export async function load(): Promise<Track> {
 
 	const track = await now_playing.json();
 	let track_item = track.item;
+	let progress_ms = track.progress_ms;
+	let playing = track.is_playing;
 
 	if(track.currently_playing_type != "track") {
 		const recently_played = await fetch(RECENTLY_PLAYED_ENDPOINT, {
@@ -57,6 +59,8 @@ export async function load(): Promise<Track> {
 		const recent_tracks = await recently_played.json();
 
 		track_item = recent_tracks.items[0].track;
+		progress_ms = 0;
+		playing = false;
 	}
 
 	return {
@@ -66,7 +70,7 @@ export async function load(): Promise<Track> {
 		album: track_item.album.name,
 		album_img: track_item.album.images[0].url,
 		duration_ms: track_item.duration_ms,
-		progress_ms: track.progress_ms,
-		playing: track.is_playing,
+		progress_ms: progress_ms,
+		playing: playing,
 	};
 }
