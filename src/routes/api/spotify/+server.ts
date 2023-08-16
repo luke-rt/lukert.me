@@ -4,22 +4,13 @@ import {
 	SPOTIFY_REFRESH_TOKEN,
 } from "$env/static/private";
 import type { Track } from "$lib/types";
+import { newTrack } from "$lib/utils";
 
 const NOW_PLAYING_ENDPOINT = "https://api.spotify.com/v1/me/player/currently-playing";
 const RECENTLY_PLAYED_ENDPOINT = "https://api.spotify.com/v1/me/player/recently-played ";
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
-const DEFAULT: Track = {
-	name: "",
-	artists: [],
-	url: "",
-	album: "",
-	album_img: "",
-	progress_ms: 0,
-	duration_ms: 0,
-	playing: false,
-};
 
-export async function load(): Promise<Track> {
+export async function GET() {
 	const { access_token } = await getAccessToken();
 
 	let response = await getItem(NOW_PLAYING_ENDPOINT, access_token);
@@ -30,7 +21,7 @@ export async function load(): Promise<Track> {
 	if (response.status === 204 || response.status > 400) {
 		// if request fails or content is empty
 		response = await getItem(RECENTLY_PLAYED_ENDPOINT, access_token);
-		if (response.status === 204 || response.status > 400) return DEFAULT;
+		if (response.status === 204 || response.status > 400) return new Response(JSON.stringify(newTrack()));
 
 		const recently_played = await response.json();
 		track_item = recently_played.items[0].track;
@@ -41,7 +32,7 @@ export async function load(): Promise<Track> {
 		if (now_playing.currently_playing_type != "track") {
 			// if now_playing is a podcast, etc
 			response = await getItem(RECENTLY_PLAYED_ENDPOINT, access_token);
-			if (response.status === 204 || response.status > 400) return DEFAULT;
+			if (response.status === 204 || response.status > 400) return new Response(JSON.stringify(newTrack()));
 
 			const recently_played = await response.json();
 			track_item = recently_played.items[0].track;
@@ -53,7 +44,7 @@ export async function load(): Promise<Track> {
 		}
 	}
 
-	return {
+	return new Response(JSON.stringify({
 		name: track_item.name,
 		artists: track_item.artists.map((artist: { name: string }) => artist.name),
 		url: track_item.external_urls.spotify,
@@ -62,7 +53,7 @@ export async function load(): Promise<Track> {
 		duration_ms: track_item.duration_ms,
 		progress_ms: progress_ms,
 		playing: is_playing,
-	};
+	}));
 }
 
 async function getAccessToken() {

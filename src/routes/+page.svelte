@@ -2,9 +2,6 @@
 	import pfp from "$lib/assets/pfp.webp";
 	import splash from "$lib/assets/splash.webp";
 	import Spotify from "$lib/components/widgets/Spotify.svelte";
-	import type { LayoutData } from "./$types";
-
-	export let data: LayoutData;
 </script>
 
 <svelte:head>
@@ -27,7 +24,7 @@
 				<br />
 				I'm currently a freshmen at University of Pennsylvania.
 			</p>
-			<Spotify track={data} />
+			<Spotify/>
 		</div>
 	</div>
 	<div class="bottom">

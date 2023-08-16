@@ -1,12 +1,16 @@
 <script lang="ts">
-	import type { Track } from "$lib/types";
-	import { truncate } from "$lib/utils";
+	import { onMount } from "svelte";
+	import { newTrack, truncate } from "$lib/utils";
 
-	export let track: Track;
+	let track = newTrack();
+	let artists = "";
+	onMount(async () => {
+		const response = await fetch(`/api/spotify`);
 
-	let artists = track.artists.join(", ");
+		track = await response.json();
+		artists = track.artists.join(", ");
+	});
 </script>
-
 <a target="_blank" rel="noopener noreferrer" href={track.url}>
 	<div class="spotify">
 		<div class="left">
