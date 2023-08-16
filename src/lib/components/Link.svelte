@@ -50,7 +50,7 @@
 	a.large {
 		color: $dark-1;
 		font-family: "League Spartan", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+			Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 		font-size: 1.4em;
 		margin-block: 15px;
 		margin-inline: 25px;

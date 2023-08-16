@@ -1,8 +1,8 @@
 import {
 	SPOTIFY_CLIENT_ID,
 	SPOTIFY_CLIENT_SECRET,
-	SPOTIFY_REFRESH_TOKEN
-	} from "$env/static/private";
+	SPOTIFY_REFRESH_TOKEN,
+} from "$env/static/private";
 import type { Track } from "$lib/types";
 
 const NOW_PLAYING_ENDPOINT = "https://api.spotify.com/v1/me/player/currently-playing";
@@ -16,8 +16,8 @@ export async function load(): Promise<Track> {
 	const response = await fetch(TOKEN_ENDPOINT, {
 		method: "POST",
 		headers: {
-		  	Authorization: `Basic ${btoa(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`)}`,
-		  	"Content-Type": "application/x-www-form-urlencoded",
+			Authorization: `Basic ${btoa(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`)}`,
+			"Content-Type": "application/x-www-form-urlencoded",
 		},
 		body: params,
 	});
@@ -27,8 +27,8 @@ export async function load(): Promise<Track> {
 	const now_playing = await fetch(NOW_PLAYING_ENDPOINT, {
 		headers: {
 			Authorization: `Bearer ${access_token}`,
-		}
-	})
+		},
+	});
 	if (now_playing.status === 204 || now_playing.status > 400) {
 		return {
 			name: "",
@@ -38,7 +38,7 @@ export async function load(): Promise<Track> {
 			album_img: "",
 			progress_ms: 0,
 			duration_ms: 0,
-			playing: false
+			playing: false,
 		};
 	}
 
@@ -46,7 +46,7 @@ export async function load(): Promise<Track> {
 
 	return {
 		name: track.item.name,
-		artists: track.item.artists.map((artist: any) => artist.name),
+		artists: track.item.artists.map((artist: { name: string; }) => artist.name),
 		url: track.item.external_urls.spotify,
 		album: track.item.album.name,
 		album_img: track.item.album.images[0].url,

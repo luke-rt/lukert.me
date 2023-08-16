@@ -7,4 +7,4 @@ export type Track = {
 	progress_ms: number;
 	duration_ms: number;
 	playing: boolean;
-}
+};

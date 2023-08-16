@@ -6,16 +6,9 @@
 
 	const dispatch = createEventDispatcher();
 	const click = () => dispatch("click");
-
 </script>
 
-<button
-	{disabled}
-	class:disabled={disabled}
-	class:dark={dark}
-	class="rounded"
-	on:click|preventDefault={click}
->
+<button {disabled} class:disabled class:dark class="rounded" on:click|preventDefault={click}>
 	<slot />
 </button>
 
@@ -26,10 +19,10 @@
 		border-radius: 1em;
 		padding: 0 1.2em;
 		height: 2em;
-    	line-height: 2em;
+		line-height: 2em;
 
 		font-family: "League Spartan", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+			Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 		font-weight: 600;
 		font-size: 1.2em;
 

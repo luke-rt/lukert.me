@@ -2,6 +2,9 @@
 	import pfp from "$lib/assets/pfp.webp";
 	import splash from "$lib/assets/splash.webp";
 	import Spotify from "$lib/components/widgets/Spotify.svelte";
+	import type { LayoutData } from "./$types";
+
+	export let data: LayoutData;
 </script>
 
 <svelte:head>
@@ -9,31 +12,22 @@
 </svelte:head>
 
 <section id="splash">
-	<img
-		alt="Splash screen"
-		src={splash}
-		loading="eager"
-	/>
+	<img alt="Splash screen" src={splash} loading="eager" />
 	<h1>Luke Tong</h1>
-	<h2>Book lover and Full-Stack developer</h2>
+	<h2>Student at University of Pennsylvania</h2>
 </section>
 
 <section id="about">
 	<div class="top">
-		<img
-			alt="Luke Tong"
-			src={pfp}
-			loading="lazy"
-		/>
+		<img alt="Luke Tong" src={pfp} loading="lazy" />
 		<div>
-			<h2>
-				Hi! Welcome to my blog!
-			</h2>
+			<h2>Hi! Welcome to my blog!</h2>
 			<p>
 				I'm Luke, and I love reading, biking, and debate.
 				<br />
 				I'm currently a freshmen at University of Pennsylvania.
 			</p>
+			<Spotify track={data} />
 		</div>
 	</div>
 	<div class="bottom">
@@ -42,8 +36,8 @@
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan dictum nulla,
 				vel eleifend mauris tincidunt vitae. Donec semper vulputate scelerisque. Suspendisse
-				ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut fermentum
-				ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
+				ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut
+				fermentum ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
 			</p>
 		</div>
 		<div>
@@ -51,8 +45,8 @@
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan dictum nulla,
 				vel eleifend mauris tincidunt vitae. Donec semper vulputate scelerisque. Suspendisse
-				ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut fermentum
-				ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
+				ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut
+				fermentum ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
 			</p>
 		</div>
 		<div>
@@ -60,8 +54,8 @@
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan dictum nulla,
 				vel eleifend mauris tincidunt vitae. Donec semper vulputate scelerisque. Suspendisse
-				ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut fermentum
-				ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
+				ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut
+				fermentum ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
 			</p>
 		</div>
 		<div>
@@ -69,8 +63,8 @@
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan dictum nulla,
 				vel eleifend mauris tincidunt vitae. Donec semper vulputate scelerisque. Suspendisse
-				ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut fermentum
-				ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
+				ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut
+				fermentum ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
 			</p>
 		</div>
 	</div>
@@ -124,11 +118,15 @@
 			}
 
 			img {
-				width: 150px;
-				height: 150px;
+				width: 180px;
+				height: 180px;
 				border-radius: 50%;
 				margin-right: 30px;
-				filter: drop-shadow(1px 1px 4px gray);
+				box-shadow: 3px 3px 5px gray;
+			}
+
+			div > p {
+				margin-block: 15px;
 			}
 		}
 		.bottom {

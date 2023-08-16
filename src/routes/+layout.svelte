@@ -3,11 +3,7 @@
 	import { page } from "$app/stores";
 	import Link from "$lib/components/Link.svelte";
 	import Button from "$lib/components/Button.svelte";
-	import Spotify from "$lib/components/widgets/Spotify.svelte";
 	import logo from "$lib/assets/logo.svg";
-	import type { LayoutData } from "./$types";
-
-	export let data: LayoutData;
 
 	let ypos = 0;
 	let y = 151;
@@ -27,7 +23,6 @@
 </header>
 
 <main>
-	<Spotify track={data} />
 	<slot />
 </main>
 
@@ -37,7 +32,9 @@
 	</a>
 	<div>
 		<Link large dark refer href="https://github.com/luke-rt">Github</Link>
-		<Link large dark refer href="https://www.linkedin.com/in/luke-tong-73525a224/">LinkedIn</Link>
+		<Link large dark refer href="https://www.linkedin.com/in/luke-tong-73525a224/"
+			>LinkedIn</Link
+		>
 		<Link large dark refer href="https://www.goodreads.com/luke-rt">Goodreads</Link>
 	</div>
 	<p>Copyright © 2023 Luke Tong</p>
