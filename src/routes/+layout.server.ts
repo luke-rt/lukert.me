@@ -20,6 +20,52 @@ const DEFAULT: Track = {
 };
 
 export async function load(): Promise<Track> {
+	const { access_token } = await getAccessToken();
+
+	let response = await getItem(NOW_PLAYING_ENDPOINT, access_token);
+	let track_item;
+	let progress_ms = 0;
+	let is_playing = false;
+
+	if (response.status === 204 || response.status > 400) {
+		// if request fails or content is empty
+		response = await getItem(RECENTLY_PLAYED_ENDPOINT, access_token);
+		if (response.status === 204 || response.status > 400) return DEFAULT;
+
+		const recently_played = await response.json();
+		track_item = recently_played.items[0].track;
+	} else {
+		// if request succeeds
+		const now_playing = await response.json();
+
+		if (now_playing.currently_playing_type != "track") {
+			// if now_playing is a podcast, etc
+			response = await getItem(RECENTLY_PLAYED_ENDPOINT, access_token);
+			if (response.status === 204 || response.status > 400) return DEFAULT;
+
+			const recently_played = await response.json();
+			track_item = recently_played.items[0].track;
+		} else {
+			// currently playing is a track
+			track_item = now_playing.item;
+			progress_ms = now_playing.progress_ms;
+			is_playing = now_playing.is_playing;
+		}
+	}
+
+	return {
+		name: track_item.name,
+		artists: track_item.artists.map((artist: { name: string }) => artist.name),
+		url: track_item.external_urls.spotify,
+		album: track_item.album.name,
+		album_img: track_item.album.images[0].url,
+		duration_ms: track_item.duration_ms,
+		progress_ms: progress_ms,
+		playing: is_playing,
+	};
+}
+
+async function getAccessToken() {
 	const params = new URLSearchParams();
 	params.append("grant_type", "refresh_token");
 	params.append("refresh_token", SPOTIFY_REFRESH_TOKEN);
@@ -32,45 +78,15 @@ export async function load(): Promise<Track> {
 		},
 		body: params,
 	});
-	const { access_token } = await response.json();
+	return response.json();
+}
 
-	const now_playing = await fetch(NOW_PLAYING_ENDPOINT, {
+async function getItem(endpoint: string, access_token: string) {
+	const response = fetch(endpoint, {
 		headers: {
 			Authorization: `Bearer ${access_token}`,
 		},
 	});
 
-	if(now_playing.status === 204 || now_playing.status > 400) return DEFAULT;
-
-	const track = await now_playing.json();
-	let track_item = track.item;
-	let progress_ms = track.progress_ms;
-	let playing = track.is_playing;
-
-	if(track.currently_playing_type != "track") {
-		const recently_played = await fetch(RECENTLY_PLAYED_ENDPOINT, {
-			headers: {
-				Authorization: `Bearer ${access_token}`,
-			},
-		});
-
-		if(recently_played.status === 204 || recently_played.status > 400) return DEFAULT;
-
-		const recent_tracks = await recently_played.json();
-
-		track_item = recent_tracks.items[0].track;
-		progress_ms = 0;
-		playing = false;
-	}
-
-	return {
-		name: track_item.name,
-		artists: track_item.artists.map((artist: { name: string; }) => artist.name),
-		url: track_item.external_urls.spotify,
-		album: track_item.album.name,
-		album_img: track_item.album.images[0].url,
-		duration_ms: track_item.duration_ms,
-		progress_ms: progress_ms,
-		playing: playing,
-	};
+	return response;
 }

@@ -25,10 +25,10 @@
 			</div>
 		</div>
 		<div class="right">
-			<span class="one"></span>
-			<span class="two"></span>
-			<span class="three"></span>
-			<span class="four"></span>
+			<span class:one={track.playing} />
+			<span class:two={track.playing} />
+			<span class:three={track.playing} />
+			<span class:four={track.playing} />
 		</div>
 	</div>
 </a>
@@ -72,8 +72,8 @@
 		}
 		.right {
 			display: flex;
-  			flex-direction: row;
-  			justify-content: center;
+			flex-direction: row;
+			justify-content: center;
 			align-items: center;
 			span {
 				height: 10px;
