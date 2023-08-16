@@ -1,7 +1,7 @@
 <script lang="ts">
 	import pfp from "$lib/assets/pfp.webp";
 	import splash from "$lib/assets/splash.webp";
-	import Link from "$lib/components/Link.svelte";
+	import Spotify from "$lib/components/widgets/Spotify.svelte";
 </script>
 
 <svelte:head>
@@ -15,6 +15,7 @@
 		loading="eager"
 	/>
 	<h1>Luke Tong</h1>
+	<h2>Book lover and Full-Stack developer</h2>
 </section>
 
 <section id="about">
@@ -29,7 +30,7 @@
 				Hi! Welcome to my blog!
 			</h2>
 			<p>
-				I'm Luke, and I love reading, biking, and <Link href="/">debate</Link>.
+				I'm Luke, and I love reading, biking, and debate.
 				<br />
 				I'm currently a freshmen at University of Pennsylvania.
 			</p>
@@ -89,24 +90,45 @@
 		}
 
 		h1 {
-			color: $dark-2;
+			color: $dark-1;
 			position: absolute;
-			top: 20vh;
-			left: 6vw;
+			top: 21vh;
+			left: 5vw;
+		}
+
+		h2 {
+			color: $dark-1;
+			position: absolute;
+			top: 31vh;
+			left: 5vw;
 		}
 	}
 
 	#about {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		padding-block: 60px;
 		.top {
 			display: flex;
 			flex-direction: horizontal;
 			justify-content: center;
+			width: fit-content;
+
+			padding: 20px;
+
+			box-shadow: 3px 3px 10px lightgray;
+
+			&:hover {
+				box-shadow: 6px 6px 10px lightgray;
+			}
+
 			img {
 				width: 150px;
 				height: 150px;
 				border-radius: 50%;
 				margin-right: 30px;
+				filter: drop-shadow(1px 1px 4px gray);
 			}
 		}
 		.bottom {

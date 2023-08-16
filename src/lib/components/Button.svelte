@@ -37,16 +37,11 @@
 		color: gainsboro;
 
 		&:hover {
-			filter: drop-shadow(4px 4px 2px gray);
+			filter: drop-shadow(3px 3px 5px gray);
 		}
 	}
 	button.dark {
 		background-color: whitesmoke;
 		color: $dark-1;
-
-		&:hover {
-			filter: drop-shadow(8px 8px 8px black);
-
-		}
 	}
 </style>

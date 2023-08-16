@@ -3,7 +3,11 @@
 	import { page } from "$app/stores";
 	import Link from "$lib/components/Link.svelte";
 	import Button from "$lib/components/Button.svelte";
+	import Spotify from "$lib/components/widgets/Spotify.svelte";
 	import logo from "$lib/assets/logo.svg";
+	import type { LayoutData } from "./$types";
+
+	export let data: LayoutData;
 
 	let ypos = 0;
 	let y = 151;
@@ -23,6 +27,7 @@
 </header>
 
 <main>
+	<Spotify track={data} />
 	<slot />
 </main>
 
