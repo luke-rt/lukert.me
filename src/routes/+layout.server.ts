@@ -6,7 +6,18 @@ import {
 import type { Track } from "$lib/types";
 
 const NOW_PLAYING_ENDPOINT = "https://api.spotify.com/v1/me/player/currently-playing";
+const RECENTLY_PLAYED_ENDPOINT = "https://api.spotify.com/v1/me/player/recently-played ";
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
+const DEFAULT: Track = {
+	name: "",
+	artists: [],
+	url: "",
+	album: "",
+	album_img: "",
+	progress_ms: 0,
+	duration_ms: 0,
+	playing: false,
+};
 
 export async function load(): Promise<Track> {
 	const params = new URLSearchParams();
@@ -21,7 +32,6 @@ export async function load(): Promise<Track> {
 		},
 		body: params,
 	});
-
 	const { access_token } = await response.json();
 
 	const now_playing = await fetch(NOW_PLAYING_ENDPOINT, {
@@ -29,29 +39,34 @@ export async function load(): Promise<Track> {
 			Authorization: `Bearer ${access_token}`,
 		},
 	});
-	if (now_playing.status === 204 || now_playing.status > 400) {
-		return {
-			name: "",
-			artists: [],
-			url: "",
-			album: "",
-			album_img: "",
-			progress_ms: 0,
-			duration_ms: 0,
-			playing: false,
-		};
-	}
+
+	if(now_playing.status === 204 || now_playing.status > 400) return DEFAULT;
 
 	const track = await now_playing.json();
+	let track_item = track.item;
+
+	if(track.currently_playing_type != "track") {
+		const recently_played = await fetch(RECENTLY_PLAYED_ENDPOINT, {
+			headers: {
+				Authorization: `Bearer ${access_token}`,
+			},
+		});
+
+		if(recently_played.status === 204 || recently_played.status > 400) return DEFAULT;
+
+		const recent_tracks = await recently_played.json();
+
+		track_item = recent_tracks.items[0].track;
+	}
 
 	return {
-		name: track.item.name,
-		artists: track.item.artists.map((artist: { name: string; }) => artist.name),
-		url: track.item.external_urls.spotify,
-		album: track.item.album.name,
-		album_img: track.item.album.images[0].url,
+		name: track_item.name,
+		artists: track_item.artists.map((artist: { name: string; }) => artist.name),
+		url: track_item.external_urls.spotify,
+		album: track_item.album.name,
+		album_img: track_item.album.images[0].url,
+		duration_ms: track_item.duration_ms,
 		progress_ms: track.progress_ms,
-		duration_ms: track.item.duration_ms,
 		playing: track.is_playing,
 	};
 }
