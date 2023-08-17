@@ -31,7 +31,7 @@
 </section>
 
 <section id="about">
-	<Box fade condition={ypos > height*0.2}>
+	<Box fade>
 		<div class="top">
 			<img alt="Luke Tong" src={pfp} loading="lazy" />
 			<div>

@@ -1,13 +1,19 @@
 <script lang="ts">
-	export let condition: boolean;
-	export let fade: boolean;
+	import { inview } from 'svelte-inview';
 
-	let c = false;
-	$: if(condition) c = true;
+	let isInView: boolean;
+	export let fade: boolean;
 </script>
 
 {#if fade}
-	<div class:fade={c}>
+	<div
+		use:inview
+		on:inview_enter={(event) => {
+			const { inView } = event.detail;
+			isInView = inView;
+		}}
+		class:fade={isInView}
+	>
 		<slot/>
 	</div>
 {/if}
@@ -18,6 +24,7 @@
 	}
 	.fade {
 		animation: fadeIn 2s;
+		animation-delay: 0.1s;
 		animation-fill-mode: forwards;
 
 		@keyframes fadeIn {
