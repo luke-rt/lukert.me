@@ -5,12 +5,18 @@
 	import Spotify from "$lib/components/widgets/Spotify.svelte";
 	import pfp from "$lib/assets/pfp.webp";
 	import splash from "$lib/assets/splash.webp";
+	import Box from '$lib/components/Box.svelte';
+
+	let ypos = 0;
+	let height = 1;
 
 	let visible = false;
 	onMount(() => {
         visible = true;
     });
 </script>
+
+<svelte:window bind:scrollY={ypos} bind:outerHeight={height} />
 
 <svelte:head>
 	<title>Home | Luke Tong's Blog</title>
@@ -25,18 +31,20 @@
 </section>
 
 <section id="about">
-	<div class="top">
-		<img alt="Luke Tong" src={pfp} loading="lazy" />
-		<div>
-			<h2>Hi! Welcome to my blog!</h2>
-			<p>
-				I'm Luke, and I love reading, biking, and debate.
-				<br />
-				I'm currently a freshmen at University of Pennsylvania.
-			</p>
-			<Spotify />
+	<Box fade condition={ypos > height*0.2}>
+		<div class="top">
+			<img alt="Luke Tong" src={pfp} loading="lazy" />
+			<div>
+				<h2>Hi! Welcome to my blog!</h2>
+				<p>
+					I'm Luke, and I love reading, biking, and debate.
+					<br />
+					I'm currently a freshmen at University of Pennsylvania.
+				</p>
+				<Spotify />
+			</div>
 		</div>
-	</div>
+	</Box>
 	<div class="bottom">
 		<div>
 			<h3>Profile</h3>
