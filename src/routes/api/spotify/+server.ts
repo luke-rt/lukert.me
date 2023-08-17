@@ -1,10 +1,9 @@
+import { json, error } from "@sveltejs/kit";
 import {
 	SPOTIFY_CLIENT_ID,
 	SPOTIFY_CLIENT_SECRET,
 	SPOTIFY_REFRESH_TOKEN,
 } from "$env/static/private";
-import type { Track } from "$lib/types";
-import { newTrack } from "$lib/utils";
 
 const NOW_PLAYING_ENDPOINT = "https://api.spotify.com/v1/me/player/currently-playing";
 const RECENTLY_PLAYED_ENDPOINT = "https://api.spotify.com/v1/me/player/recently-played ";
@@ -21,7 +20,9 @@ export async function GET() {
 	if (response.status === 204 || response.status > 400) {
 		// if request fails or content is empty
 		response = await getItem(RECENTLY_PLAYED_ENDPOINT, access_token);
-		if (response.status === 204 || response.status > 400) return new Response(JSON.stringify(newTrack()));
+		// make this return an actual error
+		if (response.status === 204 || response.status > 400)
+			return error(500, "Error fetching from spotify api");
 
 		const recently_played = await response.json();
 		track_item = recently_played.items[0].track;
@@ -32,7 +33,8 @@ export async function GET() {
 		if (now_playing.currently_playing_type != "track") {
 			// if now_playing is a podcast, etc
 			response = await getItem(RECENTLY_PLAYED_ENDPOINT, access_token);
-			if (response.status === 204 || response.status > 400) return new Response(JSON.stringify(newTrack()));
+			if (response.status === 204 || response.status > 400)
+				return error(500, "Error fetching from spotify api");
 
 			const recently_played = await response.json();
 			track_item = recently_played.items[0].track;
@@ -44,16 +46,16 @@ export async function GET() {
 		}
 	}
 
-	return new Response(JSON.stringify({
+	return json({
 		name: track_item.name,
 		artists: track_item.artists.map((artist: { name: string }) => artist.name),
 		url: track_item.external_urls.spotify,
 		album: track_item.album.name,
 		album_img: track_item.album.images[0].url,
-		duration_ms: track_item.duration_ms,
-		progress_ms: progress_ms,
+		duration: track_item.duration_ms,
+		progress: progress_ms,
 		playing: is_playing,
-	}));
+	});
 }
 
 async function getAccessToken() {

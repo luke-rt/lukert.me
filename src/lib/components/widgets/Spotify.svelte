@@ -1,38 +1,48 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { newTrack, truncate } from "$lib/utils";
+	import { truncate } from "$lib/utils";
+	import type { Track } from "$lib/types";
 
-	let track = newTrack();
-	let artists = "";
+	let track: Track;
+
 	onMount(async () => {
 		const response = await fetch(`/api/spotify`);
 
-		track = await response.json();
-		artists = track.artists.join(", ");
+		if (response.ok) track = await response.json();
 	});
 </script>
-<a target="_blank" rel="noopener noreferrer" href={track.url}>
+
+<a target="_blank" rel="noopener noreferrer" href={track?.url}>
 	<div class="spotify">
 		<div class="left">
-			<img src={track.album_img} alt={`${track.name} album cover`} loading="lazy" />
-			<div class="track">
-				<p>
-					{#if track.playing}
-						Now Listening:
-					{:else}
-						Last Listened:
-					{/if}
-				</p>
-				<b>{truncate(track.name, 20)}&nbsp • &nbsp</b><span>{truncate(artists, 20)}</span>
-				<br />
-				<sub>⊙ {truncate(track.album, 50)}</sub>
-			</div>
+			{#if track}
+				<img src={track.album_img} alt={`${track.name} album cover`} loading="lazy" />
+				<div class="track">
+					<p>
+						{#if track.playing}
+							Now Listening:
+						{:else}
+							Last Listened:
+						{/if}
+					</p>
+					<b>{truncate(track.name, 20)}&nbsp • &nbsp</b><span
+						>{truncate(track.artists.join(", "), 20)}</span
+					>
+					<br />
+					<sub>⊙ {truncate(track.album, 50)}</sub>
+				</div>
+			{:else}
+				<div class="default" />
+				<div class="track">
+					<p>Loading...</p>
+				</div>
+			{/if}
 		</div>
 		<div class="right">
-			<span class:one={track.playing} />
-			<span class:two={track.playing} />
-			<span class:three={track.playing} />
-			<span class:four={track.playing} />
+			<span class:one={track?.playing} />
+			<span class:two={track?.playing} />
+			<span class:three={track?.playing} />
+			<span class:four={track?.playing} />
 		</div>
 	</div>
 </a>
@@ -51,13 +61,17 @@
 		.left {
 			display: flex;
 			flex-direction: row;
-			img {
+			img,
+			.default {
 				width: 60px;
 				height: 60px;
 				border-radius: 5px;
 				filter: drop-shadow(3px 3px 5px black);
 
 				margin-right: 10px;
+			}
+			.default {
+				background-color: gainsboro;
 			}
 			.track {
 				b,

@@ -24,7 +24,7 @@
 				<br />
 				I'm currently a freshmen at University of Pennsylvania.
 			</p>
-			<Spotify/>
+			<Spotify />
 		</div>
 	</div>
 	<div class="bottom">
