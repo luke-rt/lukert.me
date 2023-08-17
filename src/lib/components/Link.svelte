@@ -68,10 +68,10 @@
 	a.dark {
 		color: gainsboro;
 		&:after {
-			background-color: white;
+			background-color: whitesmoke;
 		}
 		&:hover {
-			color: white;
+			color: whitesmoke;
 		}
 	}
 </style>

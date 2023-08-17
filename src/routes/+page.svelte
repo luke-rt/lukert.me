@@ -20,7 +20,7 @@
 	<img alt="Splash screen" src={splash} loading="eager" />
 	{#if visible}
 		<h1 transition:fade={{ duration: 1000 }}>Luke Tong</h1>
-		<h2 transition:typewriter={{ delay: 1000 }}>Student at University of Pennsylvania</h2>
+		<h2 transition:typewriter={{ delay: 1000 }}>Full-Stack Developer</h2>
 	{/if}
 </section>
 

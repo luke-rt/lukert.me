@@ -4,10 +4,13 @@
 	import Link from "$lib/components/Link.svelte";
 	import Button from "$lib/components/Button.svelte";
 	import logo from "$lib/assets/logo.svg";
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
+
+	inject({ mode: dev ? 'development' : 'production' });
 
 	let ypos = 0;
 	let height = 151;
-
 	$: splash = $page.url.pathname == "/" && ypos < height - 150;
 </script>
 
