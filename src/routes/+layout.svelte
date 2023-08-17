@@ -6,12 +6,12 @@
 	import logo from "$lib/assets/logo.svg";
 
 	let ypos = 0;
-	let y = 151;
+	let height = 151;
 
-	$: splash = $page.url.pathname == "/" && ypos < y - 150;
+	$: splash = $page.url.pathname == "/" && ypos < height - 150;
 </script>
 
-<svelte:window bind:scrollY={ypos} bind:outerHeight={y} />
+<svelte:window bind:scrollY={ypos} bind:outerHeight={height} />
 
 <header class:transparent={splash}>
 	<nav>

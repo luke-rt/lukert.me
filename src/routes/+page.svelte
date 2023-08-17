@@ -1,7 +1,15 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
+	import { typewriter } from '$lib/utils';
+	import Spotify from "$lib/components/widgets/Spotify.svelte";
 	import pfp from "$lib/assets/pfp.webp";
 	import splash from "$lib/assets/splash.webp";
-	import Spotify from "$lib/components/widgets/Spotify.svelte";
+
+	let visible = false;
+	onMount(() => {
+        visible = true;
+    });
 </script>
 
 <svelte:head>
@@ -10,8 +18,10 @@
 
 <section id="splash">
 	<img alt="Splash screen" src={splash} loading="eager" />
-	<h1>Luke Tong</h1>
-	<h2>Student at University of Pennsylvania</h2>
+	{#if visible}
+		<h1 transition:fade={{ duration: 1000 }}>Luke Tong</h1>
+		<h2 transition:typewriter={{ delay: 1000 }}>Student at University of Pennsylvania</h2>
+	{/if}
 </section>
 
 <section id="about">
