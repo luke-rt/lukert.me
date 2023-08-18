@@ -13,12 +13,12 @@
 
 <section id="projects">
 	{#each data.projects as project, i}
-		<div class="line"/>
+		<div class="line" />
 		<Box fade>
 			<Project right={i % 2 != 0} {project} />
 		</Box>
 	{/each}
-	<div class="line"/>
+	<div class="line" />
 </section>
 
 <style lang="scss">
