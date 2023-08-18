@@ -4,6 +4,7 @@
 	export let data;
 
 	// TODO: make the linen appear behind projects
+	// get animation timing better, maybe quick/slow?
 </script>
 
 <section id="projects-splash">
@@ -12,13 +13,12 @@
 
 <section id="projects">
 	{#each data.projects as project, i}
-		<div class="line">
-			<Box fade>
-				<Project right={i % 2 != 0} {project} />
-			</Box>
-		</div>
-		<spacer />
+		<div class="line"/>
+		<Box fade>
+			<Project right={i % 2 != 0} {project} />
+		</Box>
 	{/each}
+	<div class="line"/>
 </section>
 
 <style lang="scss">
@@ -27,35 +27,31 @@
 		height: 75vh;
 		background-color: $dark-1;
 		h1 {
-			margin-inline: auto;
 			margin-top: 50vh;
+			margin-inline: auto;
 			color: gainsboro;
 			&::after {
 				content: "";
 				background-color: gray;
-				position: absolute;
+				position: relative;
+				display: block;
+				margin-inline: auto;
+				margin-top: 4vh;
 				width: 1px;
-				top: 65vh;
-				bottom: 20vh;
+				height: 20vh;
 			}
 		}
 	}
 	#projects {
-		margin-block: 5vh;
+		margin-block: 8vh;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		spacer {
+		.line {
+			position: relative;
 			height: 8vh;
 			width: 1px;
 			background-color: gray;
-		}
-		.line {
-			&::after {
-				width: 1px;
-				height: 100%;
-				background-color: gray;
-			}
 		}
 	}
 </style>
