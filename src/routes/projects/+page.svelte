@@ -2,7 +2,6 @@
 	import Box from "$lib/components/Box.svelte";
 	import Project from "$lib/components/Project.svelte";
 	export let data;
-
 </script>
 
 <section id="projects-splash">
@@ -30,13 +29,14 @@
 			color: gainsboro;
 			&::after {
 				content: "";
-				background-color: gray;
+				background-color: lightgray;
 				position: relative;
 				display: block;
 				margin-inline: auto;
 				margin-top: 4vh;
 				width: 1px;
 				height: 20vh;
+				opacity: 75%;
 			}
 		}
 	}
@@ -49,7 +49,8 @@
 			position: relative;
 			height: 8vh;
 			width: 1px;
-			background-color: gray;
+			background-color: lightgray;
+			opacity: 75%;
 		}
 	}
 </style>

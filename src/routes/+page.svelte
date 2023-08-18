@@ -11,9 +11,7 @@
 	let height = 1;
 
 	let visible = false;
-	onMount(() => {
-		visible = true;
-	});
+	onMount(() => (visible = true));
 </script>
 
 <svelte:window bind:scrollY={ypos} bind:outerHeight={height} />
@@ -25,8 +23,8 @@
 <section id="splash">
 	<img alt="Splash screen" src={splash} loading="eager" />
 	{#if visible}
-		<h1 transition:fade={{ duration: 1000 }}>Luke Tong</h1>
-		<h2 transition:typewriter={{ delay: 1000 }}>Full-Stack Developer</h2>
+		<h1 transition:fade={{ duration: 1000, delay: 500 }}>Luke Tong</h1>
+		<h2 transition:typewriter={{ delay: 1500 }}>Full-Stack Developer</h2>
 	{/if}
 </section>
 
@@ -123,6 +121,7 @@
 			flex-direction: horizontal;
 			justify-content: center;
 			width: fit-content;
+			background-color: white;
 
 			padding: 20px;
 

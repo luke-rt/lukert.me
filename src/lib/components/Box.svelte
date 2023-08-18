@@ -15,7 +15,7 @@
 			isInView = inView;
 		}}
 		class:fade={isInView && fade}
-		class:quick={quick}
+		class:quick
 	>
 		<slot />
 	</div>
@@ -31,7 +31,7 @@
 
 			&.quick {
 				animation: fadeIn 1.2s;
-				animation-delay: 0.3s;
+				animation-delay: 0.1s;
 				animation-fill-mode: forwards;
 			}
 
@@ -45,5 +45,4 @@
 			}
 		}
 	}
-
 </style>

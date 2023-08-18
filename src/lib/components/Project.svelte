@@ -30,6 +30,7 @@
 <style lang="scss">
 	article {
 		display: flex;
+		background-color: white;
 
 		width: 800px;
 		height: 250px;

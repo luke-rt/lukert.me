@@ -1,11 +1,13 @@
 <script lang="ts">
 	import "../app.scss";
-	import { page } from "$app/stores";
+	import { slide } from "svelte/transition";
+	import { circInOut } from "svelte/easing";
+	import { page, navigating } from "$app/stores";
+	import { inject } from "@vercel/analytics";
 	import Link from "$lib/components/Link.svelte";
 	import Button from "$lib/components/Button.svelte";
 	import logo from "$lib/assets/logo.svg";
 	import { dev } from "$app/environment";
-	import { inject } from "@vercel/analytics";
 
 	inject({ mode: dev ? "development" : "production" });
 
@@ -31,9 +33,22 @@
 	</nav>
 </header>
 
-<main>
-	<slot />
-</main>
+{#key $page.url.pathname}
+	{#if $navigating}
+		<div
+			out:slide={{
+				axis: "x",
+				duration: 500,
+				delay: 300,
+				easing: circInOut,
+			}}
+			id="transition"
+		/>
+	{/if}
+	<main>
+		<slot />
+	</main>
+{/key}
 
 <footer>
 	<a href="/">
@@ -41,9 +56,7 @@
 	</a>
 	<div>
 		<Link large dark refer href="https://github.com/luke-rt">Github</Link>
-		<Link large dark refer href="https://www.linkedin.com/in/luke-tong-73525a224/"
-			>LinkedIn</Link
-		>
+		<Link large dark refer href="https://www.linkedin.com/in/luke-rt/">LinkedIn</Link>
 		<Link large dark refer href="https://www.goodreads.com/luke-rt">Goodreads</Link>
 	</div>
 	<p>Copyright © 2023 Luke Tong</p>
@@ -67,6 +80,14 @@
 	}
 	header.transparent {
 		background-color: transparent;
+	}
+
+	#transition {
+		position: fixed;
+		height: 100vh;
+		width: 100vw;
+		background-color: $dark-1;
+		z-index: 1000;
 	}
 
 	footer {
