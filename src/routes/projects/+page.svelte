@@ -47,7 +47,7 @@
 		align-items: center;
 		.line {
 			position: relative;
-			height: 8vh;
+			height: 10vh;
 			width: 1px;
 			background-color: lightgray;
 			opacity: 75%;

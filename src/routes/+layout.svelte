@@ -3,23 +3,20 @@
 	import { slide } from "svelte/transition";
 	import { circInOut } from "svelte/easing";
 	import { page, navigating } from "$app/stores";
+	import { dev } from "$app/environment";
 	import { inject } from "@vercel/analytics";
 	import Link from "$lib/components/Link.svelte";
 	import Button from "$lib/components/Button.svelte";
 	import logo from "$lib/assets/logo.svg";
-	import { dev } from "$app/environment";
 
 	inject({ mode: dev ? "development" : "production" });
 
 	let ypos = 0;
 	let height = 151;
 
-	$: splash = ypos < height - 150;
+	$: splash = ypos < height - 125;
 	$: home = $page.url.pathname == "/";
-
-	$: if (!home) {
-		splash = ypos < height * 0.5 - 100;
-	}
+	$: if (!home) splash = ypos < height * 0.75 - 125;
 </script>
 
 <svelte:window bind:scrollY={ypos} bind:outerHeight={height} />

@@ -13,7 +13,7 @@ export async function GET() {
 	});
 	projects.push({
 		title: "Asciiframe",
-		img: "thetowerphs.png",
+		img: "asciiframe.png",
 		desc: "A command-line tool that can convert any video (or image) into a stream of ascii characters. Written with Rust and OpenCV.",
 		src_url: "https://github.com/luke-rt/asciiframe",
 	});

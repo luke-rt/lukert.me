@@ -29,7 +29,7 @@
 </section>
 
 <section id="about">
-	<Box fade quick>
+	<Box fade>
 		<div class="top">
 			<img alt="Luke Tong" src={pfp} loading="lazy" />
 			<div>

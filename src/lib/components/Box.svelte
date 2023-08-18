@@ -1,21 +1,23 @@
 <script lang="ts">
-	import { inview } from "svelte-inview";
+	import { inview, type Options } from "svelte-inview";
 
 	export let fade: boolean;
-	export let quick = false;
 
 	let isInView: boolean;
+	const options: Options = {
+		rootMargin: "-100px",
+		unobserveOnEnter: true,
+	};
 </script>
 
 {#if fade}
 	<div
-		use:inview
+		use:inview={options}
 		on:inview_enter={(event) => {
 			const { inView } = event.detail;
 			isInView = inView;
 		}}
 		class:fade={isInView && fade}
-		class:quick
 	>
 		<slot />
 	</div>
@@ -26,14 +28,8 @@
 		opacity: 0;
 		&.fade {
 			animation: fadeIn 1.5s;
-			animation-delay: 0.5s;
+			animation-delay: 0.3s;
 			animation-fill-mode: forwards;
-
-			&.quick {
-				animation: fadeIn 1.2s;
-				animation-delay: 0.1s;
-				animation-fill-mode: forwards;
-			}
 
 			@keyframes fadeIn {
 				0% {

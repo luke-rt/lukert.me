@@ -1,15 +1,27 @@
 <script lang="ts">
 	import type { Project } from "$lib/types";
 	import Link from "$lib/components/Link.svelte";
+	import { inview, type Options } from "svelte-inview";
 
 	export let project: Project;
 	export let right = false;
+
+  	let isInView: boolean;
+	const options: Options = {
+		rootMargin: "-50px",
+		unobserveOnEnter: true,
+	};
 </script>
 
-<article class:right class:left={!right}>
-	{#if right}
-		<img src={`/projects/${project.img}`} alt={`Preview image for project ${project.title}`} />
-	{/if}
+<article
+	class:right
+	class:left={!right}
+	use:inview={options}
+		on:inview_enter={(event) => {
+			const { inView } = event.detail;
+			isInView = inView;
+		}}
+>
 	<div>
 		<h3>{project.title}</h3>
 		<p>{project.desc}</p>
@@ -22,8 +34,8 @@
 			{/if}
 		</div>
 	</div>
-	{#if !right}
-		<img src={`/projects/${project.img}`} alt={`Preview image for project ${project.title}`} />
+	{#if isInView}
+		<img src={`/projects/${project.img}`} alt={`Preview image for project ${project.title}`} loading="lazy" />
 	{/if}
 </article>
 
@@ -35,6 +47,7 @@
 		width: 800px;
 		height: 250px;
 		padding: 20px;
+		margin-left: 75px;
 
 		box-shadow: 3px 3px 10px lightgray;
 
@@ -57,17 +70,16 @@
 			}
 		}
 		img {
-			width: 300px;
-			height: 200px;
+			margin: 15px;
+			height: auto;
 			object-fit: contain;
 			box-shadow: 3px 3px 5px lightgray;
 		}
 	}
-	article.left {
-		margin-left: 75px;
-	}
 	article.right {
 		text-align: right;
+		flex-direction: row-reverse;
 		margin-right: 75px;
+		margin-left: 0;
 	}
 </style>
