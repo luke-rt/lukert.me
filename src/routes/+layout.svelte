@@ -39,7 +39,16 @@
 				delay: 300,
 				easing: circInOut,
 			}}
-			id="transition"
+			class="transition black"
+		/>
+		<div
+			out:slide={{
+				axis: "x",
+				duration: 500,
+				delay: 500,
+				easing: circInOut,
+			}}
+			class="transition red"
 		/>
 	{/if}
 	<main>
@@ -79,12 +88,18 @@
 		background-color: transparent;
 	}
 
-	#transition {
+	.transition {
 		position: fixed;
 		height: 100vh;
 		width: 100vw;
-		background-color: $dark-1;
-		z-index: 1000;
+		&.black {
+			background-color: $dark-1;
+			z-index: 1000;
+		}
+		&.red {
+			background-color: $dark-2;
+			z-index: 999;
+		}
 	}
 
 	footer {

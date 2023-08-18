@@ -66,7 +66,7 @@
 				display: flex;
 				flex-direction: row;
 				justify-content: center;
-				align-items: flex-end;
+				align-items: center;
 			}
 		}
 		img {

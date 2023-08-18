@@ -12,6 +12,8 @@
 
 	let visible = false;
 	onMount(() => (visible = true));
+
+	// add view transition to contact card. have it travel into popup
 </script>
 
 <svelte:window bind:scrollY={ypos} bind:outerHeight={height} />
@@ -45,13 +47,15 @@
 	</Box>
 	<div class="bottom">
 		<div>
-			<h3>Profile</h3>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan dictum nulla,
-				vel eleifend mauris tincidunt vitae. Donec semper vulputate scelerisque. Suspendisse
-				ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut
-				fermentum ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
-			</p>
+			<Box fade>
+				<h3>Profile</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan dictum nulla,
+					vel eleifend mauris tincidunt vitae. Donec semper vulputate scelerisque. Suspendisse
+					ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut
+					fermentum ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
+				</p>
+			</Box>
 		</div>
 		<div>
 			<h3>Skills</h3>
