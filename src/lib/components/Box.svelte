@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { inview } from "svelte-inview";
 
-	let isInView: boolean;
 	export let fade: boolean;
+	export let quick = false;
+
+	let isInView: boolean;
 </script>
 
 {#if fade}
@@ -12,7 +14,8 @@
 			const { inView } = event.detail;
 			isInView = inView;
 		}}
-		class:fade={isInView}
+		class:fade={isInView && fade}
+		class:quick={quick}
 	>
 		<slot />
 	</div>
@@ -21,19 +24,26 @@
 <style lang="scss">
 	div {
 		opacity: 0;
-	}
-	.fade {
-		animation: fadeIn 1.5s;
-		animation-delay: 0.5s;
-		animation-fill-mode: forwards;
+		&.fade {
+			animation: fadeIn 1.5s;
+			animation-delay: 0.5s;
+			animation-fill-mode: forwards;
 
-		@keyframes fadeIn {
-			0% {
-				opacity: 0;
+			&.quick {
+				animation: fadeIn 1.2s;
+				animation-delay: 0.3s;
+				animation-fill-mode: forwards;
 			}
-			100% {
-				opacity: 1;
+
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
 			}
 		}
 	}
+
 </style>

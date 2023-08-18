@@ -31,7 +31,7 @@
 </section>
 
 <section id="about">
-	<Box fade>
+	<Box fade quick>
 		<div class="top">
 			<img alt="Luke Tong" src={pfp} loading="lazy" />
 			<div>

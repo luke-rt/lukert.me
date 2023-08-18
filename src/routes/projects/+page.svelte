@@ -3,8 +3,6 @@
 	import Project from "$lib/components/Project.svelte";
 	export let data;
 
-	// TODO: make the linen appear behind projects
-	// get animation timing better, maybe quick/slow?
 </script>
 
 <section id="projects-splash">
