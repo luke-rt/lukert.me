@@ -15,4 +15,4 @@ export type Project = {
 	desc: string;
 	src_url?: string;
 	demo_url?: string;
-}
+};

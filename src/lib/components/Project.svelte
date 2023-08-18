@@ -6,7 +6,7 @@
 	export let right = false;
 </script>
 
-<article class:right={right} class:left={!right}>
+<article class:right class:left={!right}>
 	{#if right}
 		<img src={`/projects/${project.img}`} alt={`Preview image for project ${project.title}`} />
 	{/if}
@@ -15,14 +15,10 @@
 		<p>{project.desc}</p>
 		<div>
 			{#if project.demo_url}
-				<Link large refer href={project.demo_url}>
-					Demo
-				</Link>
+				<Link large refer href={project.demo_url}>Demo</Link>
 			{/if}
 			{#if project.src_url}
-				<Link large refer href={project.src_url}>
-					Source Code
-				</Link>
+				<Link large refer href={project.src_url}>Source Code</Link>
 			{/if}
 		</div>
 	</div>

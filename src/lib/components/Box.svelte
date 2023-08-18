@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { inview } from 'svelte-inview';
+	import { inview } from "svelte-inview";
 
 	let isInView: boolean;
 	export let fade: boolean;
@@ -14,7 +14,7 @@
 		}}
 		class:fade={isInView}
 	>
-		<slot/>
+		<slot />
 	</div>
 {/if}
 
@@ -28,8 +28,12 @@
 		animation-fill-mode: forwards;
 
 		@keyframes fadeIn {
-			0% { opacity: 0; }
-			100% { opacity: 1; }
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
 		}
 	}
 </style>

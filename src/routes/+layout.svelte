@@ -4,10 +4,10 @@
 	import Link from "$lib/components/Link.svelte";
 	import Button from "$lib/components/Button.svelte";
 	import logo from "$lib/assets/logo.svg";
-	import { dev } from '$app/environment';
-	import { inject } from '@vercel/analytics';
+	import { dev } from "$app/environment";
+	import { inject } from "@vercel/analytics";
 
-	inject({ mode: dev ? 'development' : 'production' });
+	inject({ mode: dev ? "development" : "production" });
 
 	let ypos = 0;
 	let height = 151;
@@ -15,7 +15,7 @@
 	$: splash = ypos < height - 150;
 	$: home = $page.url.pathname == "/";
 
-	$: if(!home) {
+	$: if (!home) {
 		splash = ypos < height * 0.5 - 100;
 	}
 </script>
@@ -25,7 +25,7 @@
 <header class:transparent={splash}>
 	<nav>
 		<Link large dark={splash && !home} href="/">home</Link>
-		<Link large dark={splash && !home} href="books">books</Link>
+		<!--<Link large dark={splash && !home} href="books">books</Link>-->
 		<Link large dark={splash && !home} href="projects">projects</Link>
 		<Button dark={splash && !home}>Contact</Button>
 	</nav>

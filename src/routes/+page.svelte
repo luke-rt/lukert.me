@@ -1,19 +1,19 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
-	import { typewriter } from '$lib/utils';
+	import { onMount } from "svelte";
+	import { fade } from "svelte/transition";
+	import { typewriter } from "$lib/utils";
 	import Spotify from "$lib/components/widgets/Spotify.svelte";
 	import pfp from "$lib/assets/pfp.webp";
 	import splash from "$lib/assets/splash.webp";
-	import Box from '$lib/components/Box.svelte';
+	import Box from "$lib/components/Box.svelte";
 
 	let ypos = 0;
 	let height = 1;
 
 	let visible = false;
 	onMount(() => {
-        visible = true;
-    });
+		visible = true;
+	});
 </script>
 
 <svelte:window bind:scrollY={ypos} bind:outerHeight={height} />

@@ -3,7 +3,7 @@ export function truncate(str: string, limit: number): string {
 }
 
 export function typewriter(node: Element, { delay = 0, speed = 2 }) {
-	if(!node.textContent) throw new Error("Must have text content");
+	if (!node.textContent) throw new Error("Must have text content");
 
 	const text = node.textContent;
 	const duration = text.length / (speed * 0.01);
@@ -14,6 +14,6 @@ export function typewriter(node: Element, { delay = 0, speed = 2 }) {
 		tick: (t: number) => {
 			const i = Math.trunc(text.length * t);
 			node.textContent = text.slice(0, i) + "|";
-		}
+		},
 	};
 }
