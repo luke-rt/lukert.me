@@ -11,17 +11,23 @@
 
 	let ypos = 0;
 	let height = 151;
-	$: splash = $page.url.pathname == "/" && ypos < height - 150;
+
+	$: splash = ypos < height - 150;
+	$: home = $page.url.pathname == "/";
+
+	$: if(!home) {
+		splash = ypos < height * 0.5 - 100;
+	}
 </script>
 
 <svelte:window bind:scrollY={ypos} bind:outerHeight={height} />
 
 <header class:transparent={splash}>
 	<nav>
-		<Link large href="/">home</Link>
-		<Link large href="books">books</Link>
-		<Link large href="projects">projects</Link>
-		<Button>Contact</Button>
+		<Link large dark={splash && !home} href="/">home</Link>
+		<Link large dark={splash && !home} href="books">books</Link>
+		<Link large dark={splash && !home} href="projects">projects</Link>
+		<Button dark={splash && !home}>Contact</Button>
 	</nav>
 </header>
 
@@ -54,18 +60,13 @@
 		align-items: center;
 		justify-content: right;
 		background-color: whitesmoke;
+		transition: 0.2s;
 		nav {
 			padding-right: 5vw;
-		}
-		&:hover {
-			box-shadow: 0 5px 10px -1px gray;
 		}
 	}
 	header.transparent {
 		background-color: transparent;
-		&:hover {
-			box-shadow: none;
-		}
 	}
 
 	footer {

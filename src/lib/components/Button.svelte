@@ -36,5 +36,9 @@
 	button.dark {
 		background-color: whitesmoke;
 		color: $dark-1;
+
+		&:hover {
+			filter: drop-shadow(5px 5px 10px black);
+		}
 	}
 </style>

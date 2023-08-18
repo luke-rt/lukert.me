@@ -8,3 +8,11 @@ export type Track = {
 	duration_ms: number;
 	playing: boolean;
 };
+
+export type Project = {
+	title: string;
+	img: string;
+	desc: string;
+	src_url?: string;
+	demo_url?: string;
+}

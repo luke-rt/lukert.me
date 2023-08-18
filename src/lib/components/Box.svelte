@@ -23,8 +23,8 @@
 		opacity: 0;
 	}
 	.fade {
-		animation: fadeIn 2s;
-		animation-delay: 0.1s;
+		animation: fadeIn 1.5s;
+		animation-delay: 0.5s;
 		animation-fill-mode: forwards;
 
 		@keyframes fadeIn {
