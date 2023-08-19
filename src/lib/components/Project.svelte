@@ -6,7 +6,7 @@
 	export let project: Project;
 	export let right = false;
 
-  	let isInView: boolean;
+	let isInView: boolean;
 	const options: Options = {
 		rootMargin: "-50px",
 		unobserveOnEnter: true,
@@ -17,10 +17,10 @@
 	class:right
 	class:left={!right}
 	use:inview={options}
-		on:inview_enter={(event) => {
-			const { inView } = event.detail;
-			isInView = inView;
-		}}
+	on:inview_enter={(event) => {
+		const { inView } = event.detail;
+		isInView = inView;
+	}}
 >
 	<div>
 		<h3>{project.title}</h3>
@@ -35,7 +35,11 @@
 		</div>
 	</div>
 	{#if isInView}
-		<img src={`/projects/${project.img}`} alt={`Preview image for project ${project.title}`} loading="lazy" />
+		<img
+			src={`/projects/${project.img}`}
+			alt={`Preview image for project ${project.title}`}
+			loading="lazy"
+		/>
 	{/if}
 </article>
 
@@ -50,23 +54,17 @@
 		margin-left: 75px;
 
 		box-shadow: 3px 3px 10px lightgray;
-
 		&:hover {
 			box-shadow: 6px 6px 10px lightgray;
 		}
 		div {
-			display: flex;
-			flex-direction: column;
-			margin-inline: 10px;
 			h3 {
 				padding-bottom: 10px;
 			}
 			div {
-				height: 100%;
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
+				width: fit-content;
+				margin-inline: auto;
+				margin-top: 50px;
 			}
 		}
 		img {

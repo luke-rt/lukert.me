@@ -50,10 +50,11 @@
 			<Box fade>
 				<h3>Profile</h3>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan dictum nulla,
-					vel eleifend mauris tincidunt vitae. Donec semper vulputate scelerisque. Suspendisse
-					ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut
-					fermentum ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan dictum
+					nulla, vel eleifend mauris tincidunt vitae. Donec semper vulputate scelerisque.
+					Suspendisse ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus
+					diam, ut fermentum ex.Donec lectus libero, vulputate quis enim in, pulvinar
+					rutrum felis.
 				</p>
 			</Box>
 		</div>
@@ -89,48 +90,36 @@
 
 <style lang="scss">
 	#splash {
-		display: flex;
-		height: 100vh;
-		background-color: $dark-1;
-
 		img {
-			flex-grow: 1;
-			width: 100%;
-			height: 100%;
+			width: 100vw;
+			height: 100vh;
 			object-fit: cover;
 		}
 
-		h1 {
-			color: $dark-1;
-			position: absolute;
-			top: 21vh;
-			left: 5vw;
-		}
-
+		h1,
 		h2 {
 			color: $dark-1;
 			position: absolute;
-			top: 31vh;
 			left: 5vw;
+		}
+		h1 {
+			top: 21vh;
+		}
+		h2 {
+			top: 31vh;
 		}
 	}
 
 	#about {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
 		padding-block: 60px;
 		.top {
 			display: flex;
-			flex-direction: horizontal;
-			justify-content: center;
 			width: fit-content;
+			margin-inline: auto;
+			padding: 20px;
 			background-color: white;
 
-			padding: 20px;
-
 			box-shadow: 3px 3px 10px lightgray;
-
 			&:hover {
 				box-shadow: 6px 6px 10px lightgray;
 			}

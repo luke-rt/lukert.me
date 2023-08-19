@@ -27,19 +27,15 @@
 			content: " ";
 			background-color: $dark-2;
 			position: absolute;
+			display: block;
 			width: 0%;
 			left: 50%;
-			transition: left 0.2s cubic-bezier(0.215, 0.61, 0.355, 1),
-				width 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+			transition: left 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
+				width 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 		}
-
 		&:hover {
 			color: $dark-2;
-			transition: 0.3s;
 			&:after {
-				content: " ";
-				position: absolute;
-				display: block;
 				width: 100%;
 				height: 2px;
 				left: 0;

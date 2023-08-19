@@ -75,23 +75,22 @@
 		top: 0;
 		left: 0;
 		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: right;
 		background-color: whitesmoke;
 		transition: 0.2s;
 		nav {
-			padding-right: 5vw;
+			width: fit-content;
+			margin-right: 5vw;
+			margin-left: auto;
 		}
-	}
-	header.transparent {
-		background-color: transparent;
+		&.transparent {
+			background-color: transparent;
+		}
 	}
 
 	.transition {
 		position: fixed;
-		height: 100vh;
-		width: 100vw;
+		height: 100%;
+		width: 100%;
 		&.black {
 			background-color: $dark-1;
 			z-index: 1000;
@@ -103,15 +102,14 @@
 	}
 
 	footer {
-		height: 50vh;
 		background-color: $dark-1;
-
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
+		height: 50vh;
 		a {
 			margin: 20px;
-			margin-top: 80px;
 			img {
 				width: 120px;
 				height: 120px;
