@@ -6,6 +6,7 @@
 	import pfp from "$lib/assets/pfp.webp";
 	import splash from "$lib/assets/splash.webp";
 	import Box from "$lib/components/Box.svelte";
+	import Link from "$lib/components/Link.svelte";
 
 	let ypos = 0;
 	let height = 1;
@@ -19,7 +20,7 @@
 <svelte:window bind:scrollY={ypos} bind:outerHeight={height} />
 
 <svelte:head>
-	<title>Home | Luke Tong's Blog</title>
+	<title>Home | Luke Tong's Website</title>
 </svelte:head>
 
 <section id="splash">
@@ -37,7 +38,7 @@
 			<div>
 				<h2>Hi! Welcome to my blog!</h2>
 				<p>
-					I'm Luke, and I love reading, biking, and debate.
+					I'm Luke, and I love reading and computer science.
 					<br />
 					I'm currently a freshmen at University of Pennsylvania.
 				</p>
@@ -50,40 +51,23 @@
 			<Box fade>
 				<h3>Profile</h3>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan dictum
-					nulla, vel eleifend mauris tincidunt vitae. Donec semper vulputate scelerisque.
-					Suspendisse ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus
-					diam, ut fermentum ex.Donec lectus libero, vulputate quis enim in, pulvinar
-					rutrum felis.
+					I'm currently a Cognitive Science and Computer Science major at the University of
+					Pennsylvania. I'm a developer at <Link refer href="https://pennspark.org/">Penn Spark</Link>
+					and <Link refer href="https://www.thedp.com/">The Daily Pennsylvanian. </Link>
 				</p>
 			</Box>
 		</div>
 		<div>
-			<h3>Skills</h3>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan dictum nulla,
-				vel eleifend mauris tincidunt vitae. Donec semper vulputate scelerisque. Suspendisse
-				ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut
-				fermentum ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
-			</p>
-		</div>
-		<div>
-			<h3>Projects</h3>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan dictum nulla,
-				vel eleifend mauris tincidunt vitae. Donec semper vulputate scelerisque. Suspendisse
-				ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut
-				fermentum ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
-			</p>
-		</div>
-		<div>
-			<h3>Books</h3>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan dictum nulla,
-				vel eleifend mauris tincidunt vitae. Donec semper vulputate scelerisque. Suspendisse
-				ullamcorper tellus vel suscipit placerat. Curabitur consequat tempus diam, ut
-				fermentum ex.Donec lectus libero, vulputate quis enim in, pulvinar rutrum felis.
-			</p>
+			<Box fade>
+				<h3>Skills</h3>
+				<p>
+					<b>Languages:</b>
+					C++, Java, JS/TS, HTML/CSS, C, Rust, Python, OCaml, and SQL
+					<br /><br />
+					<b>Technologies:</b>
+					Node.js, Svelte, React, Next.js, Vue, Firebase, Git, Linux. Learning Django and LaTeX
+				</p>
+			</Box>
 		</div>
 	</div>
 </section>
@@ -137,17 +121,17 @@
 			}
 		}
 		.bottom {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: 1fr 1fr;
-			grid-row-gap: 50px;
+			display: flex;
+			flex-wrap: wrap;
+
 			padding-top: 30px;
 			width: 70vw;
 			margin-inline: auto;
 
 			& > div {
-				width: 400px;
-				margin-inline: auto;
+				width: 500px;
+				height: 200px;
+				margin-block: 2vh;
 			}
 		}
 	}

@@ -23,6 +23,20 @@ export async function GET() {
 		desc: "A bare metal, 32-bit kernel + custom bootloader written in C and Intel Assembly. All it does is play guess the number.",
 		src_url: "https://github.com/luke-rt/guess-the-number",
 	});
+	projects.push({
+		title: "Penn Course Cart (Technical challenge)",
+		img: "penn-course-cart.png",
+		desc: "A UI for picking and viewing courses. Built for a club application so it is NOT a real project",
+		demo_url: "https://pennlabs-frontend-challenge.vercel.app/",
+		src_url: "https://github.com/luke-rt/pennlabs-frontend-challenge",
+	});
+	projects.push({
+		title: "Under the Button quiz (Technical challenge)",
+		img: "dp-challenge.png",
+		desc: "A UI for an interactive satirical quiz. Built for a club application so it is NOT a real project",
+		demo_url: "https://dp-challenge.vercel.app/",
+		src_url: "https://github.com/luke-rt/dp-challenge",
+	});
 
 	return json({
 		projects: projects,

@@ -4,6 +4,11 @@
 	export let data;
 </script>
 
+<svelte:head>
+	<title>Home | Luke Tong's Website</title>
+	<meta name="description" content="Some projects I've worked on in the past!" />
+</svelte:head>
+
 <section id="projects-splash">
 	<h1>Projects</h1>
 </section>
