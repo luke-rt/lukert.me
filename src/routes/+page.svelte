@@ -114,6 +114,7 @@
 				border-radius: 50%;
 				margin-right: 30px;
 				box-shadow: 3px 3px 5px gray;
+				object-fit: cover;
 			}
 
 			div > p {
