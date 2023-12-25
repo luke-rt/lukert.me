@@ -5,11 +5,13 @@
 	import { page, navigating } from "$app/stores";
 	import { dev } from "$app/environment";
 	import { inject } from "@vercel/analytics";
+	import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit"
 	import Link from "$lib/components/Link.svelte";
-	import Button from "$lib/components/Button.svelte";
 	import logo from "$lib/assets/logo.svg";
 
+	// vercel stuff
 	inject({ mode: dev ? "development" : "production" });
+	injectSpeedInsights();
 
 	let ypos = 0;
 	let height = 151;
