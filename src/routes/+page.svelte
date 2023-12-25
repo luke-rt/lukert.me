@@ -51,7 +51,7 @@
 			<Box fade>
 				<h3>Profile</h3>
 				<p>
-					I'm currently a Cognitive Science and Computer Science major at the University of
+					I'm currently a Computer Science major at the University of
 					Pennsylvania. I'm a developer at <Link refer href="https://pennspark.org/">Penn Spark</Link>
 					and <Link refer href="https://www.thedp.com/">The Daily Pennsylvanian. </Link>
 				</p>
@@ -65,7 +65,7 @@
 					C++, Java, JS/TS, HTML/CSS, C, Rust, Python, OCaml, and SQL
 					<br /><br />
 					<b>Technologies:</b>
-					Node.js, Svelte, React, Next.js, Vue, Firebase, Git, Linux. Learning Django and LaTeX
+					Node.js, Svelte, React, Next.js, Vue, Firebase, Git, Linux.
 				</p>
 			</Box>
 		</div>
@@ -130,8 +130,9 @@
 			margin-inline: auto;
 
 			& > div {
-				width: 500px;
+				width: 460px;
 				height: 200px;
+				padding-inline: 20px;
 				margin-block: 2vh;
 			}
 		}

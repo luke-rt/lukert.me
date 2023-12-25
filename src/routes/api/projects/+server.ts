@@ -3,7 +3,18 @@ import type { Project } from "$lib/types";
 
 export async function GET() {
 	const projects: Project[] = [];
-
+	projects.push({
+		title: "Sparkify (Penn Spark Fall 2023)",
+		img: "sparkify.png",
+		desc: "A web app that uses AI to generate a user's collage of their top music taste on Spotify. Built with Python, Svelte, and AWS Lambda",
+		demo_url: "https://sparkify.vercel.app/",
+	})
+	projects.push({
+		title: "The Daily Pennsylvanian Platform API",
+		img: "thedp.png",
+		desc: "A unified API for The Daily Pennsylvanian, Under the Button, and 34th Street websites, as well as the DP+ mobile app. Built with Express, MongoDB, and TypeScript",
+		src_url: "https://github.com/dailypenn/api.thedp.com",
+	})
 	projects.push({
 		title: "The Tower PHS",
 		img: "thetowerphs.png",
@@ -24,16 +35,16 @@ export async function GET() {
 		src_url: "https://github.com/luke-rt/guess-the-number",
 	});
 	projects.push({
-		title: "Penn Course Cart (Technical challenge)",
+		title: "Penn Course Cart (SHOWCASE)",
 		img: "penn-course-cart.png",
-		desc: "A UI for picking and viewing courses. Built for a club application so it is NOT a real project",
+		desc: "A UI for picking and viewing courses. (Penn Labs Club Application)",
 		demo_url: "https://pennlabs-frontend-challenge.vercel.app/",
 		src_url: "https://github.com/luke-rt/pennlabs-frontend-challenge",
 	});
 	projects.push({
-		title: "Under the Button quiz (Technical challenge)",
+		title: "Under the Button quiz (SHOWCASE)",
 		img: "dp-challenge.png",
-		desc: "A UI for an interactive satirical quiz. Built for a club application so it is NOT a real project",
+		desc: "A UI for an interactive satirical quiz. (The DP Club Application)",
 		demo_url: "https://dp-challenge.vercel.app/",
 		src_url: "https://github.com/luke-rt/dp-challenge",
 	});
