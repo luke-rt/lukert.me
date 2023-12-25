@@ -26,7 +26,7 @@
 		<Link large dark={splash && !home} href="/">home</Link>
 		<!--<Link large dark={splash && !home} href="books">books</Link>-->
 		<Link large dark={splash && !home} href="projects">projects</Link>
-		<Button dark={splash && !home}>Contact</Button>
+		<Link large dark={splash && !home} href="mailto:luke.rtong@gmail.com">contact</Link>
 	</nav>
 </header>
 

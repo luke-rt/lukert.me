@@ -52,10 +52,12 @@
 		align-items: center;
 		.line {
 			position: relative;
-			height: 10vh;
+			height: 350px;
+			margin-top: -300px;
 			width: 1px;
 			background-color: lightgray;
 			opacity: 75%;
+			z-index: -1;
 		}
 	}
 </style>
