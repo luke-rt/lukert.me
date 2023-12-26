@@ -5,7 +5,7 @@
 	import { page, navigating } from "$app/stores";
 	import { dev } from "$app/environment";
 	import { inject } from "@vercel/analytics";
-	import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit"
+	import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
 	import Link from "$lib/components/Link.svelte";
 	import logo from "$lib/assets/logo.svg";
 
