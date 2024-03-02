@@ -28,7 +28,7 @@
 		<Link large dark={splash && !home} href="/">home</Link>
 		<!--<Link large dark={splash && !home} href="books">books</Link>-->
 		<Link large dark={splash && !home} href="projects">projects</Link>
-		<Link large dark={splash && !home} href="mailto:luke.rtong@gmail.com">contact</Link>
+		<Link large refer dark={splash && !home} href="/LukeTong_Resume.pdf">resume</Link>
 	</nav>
 </header>
 
@@ -62,12 +62,13 @@
 	<a href="/">
 		<img src={logo} alt="Tree logo" loading="lazy" />
 	</a>
+	<p>luke.rtong@gmail.com</p>
 	<div>
 		<Link large dark refer href="https://github.com/luke-rt">Github</Link>
 		<Link large dark refer href="https://www.linkedin.com/in/luke-rt/">LinkedIn</Link>
 		<Link large dark refer href="https://www.goodreads.com/luke-rt">Goodreads</Link>
 	</div>
-	<p>Copyright © 2023 Luke Tong</p>
+	<p>Copyright © 2024 Luke Tong</p>
 </footer>
 
 <style lang="scss">
@@ -111,7 +112,7 @@
 		justify-content: center;
 		height: 50vh;
 		a {
-			margin: 20px;
+			margin: 8px;
 			img {
 				width: 120px;
 				height: 120px;
@@ -126,6 +127,9 @@
 					filter: drop-shadow(8px 8px 8px black);
 				}
 			}
+		}
+		div {
+			margin-top: 15px;
 		}
 		p {
 			color: gainsboro;

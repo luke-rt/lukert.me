@@ -3,18 +3,26 @@ import type { Project } from "$lib/types";
 
 export async function GET() {
 	const projects: Project[] = [];
+	// projects.push({
+	// 	title: "Penn Course Plan + Alert (Penn Labs Sprig 2024)",
+	// 	img: "sparkify.png",
+	// 	desc: "Integrates two previous Penn Labs products, Penn Course Alert (a place to sign up for alerts when a full course opens up) and Penn Course Plan (a mock schedule platform), into a single, unified platform for a more intuitive course shopping experience.",
+	// 	demo_url: "https://penncourseplan.com/",
+	// 	src_url: "https://github.com/pennlabs/penn-courses",
+	// })
 	projects.push({
 		title: "Sparkify (Penn Spark Fall 2023)",
 		img: "sparkify.png",
 		desc: "A web app that uses AI to generate a user's collage of their top music taste on Spotify. Built with Python, Svelte, and AWS Lambda",
 		demo_url: "https://sparkify.vercel.app/",
-	})
+		src_url: "https://github.com/PennSpark/fa23-sparkify",
+	});
 	projects.push({
 		title: "The Daily Pennsylvanian Platform API",
 		img: "thedp.png",
 		desc: "A unified API for The Daily Pennsylvanian, Under the Button, and 34th Street websites, as well as the DP+ mobile app. Built with Express, MongoDB, and TypeScript",
 		src_url: "https://github.com/dailypenn/api.thedp.com",
-	})
+	});
 	projects.push({
 		title: "The Tower PHS",
 		img: "thetowerphs.png",

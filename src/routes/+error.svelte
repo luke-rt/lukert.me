@@ -19,7 +19,9 @@
 		text-align: center;
 		padding-top: 25vh;
 		background-color: $dark-1;
-		h1, h2, h3 {
+		h1,
+		h2,
+		h3 {
 			color: gainsboro;
 			padding-block: 2vh;
 		}

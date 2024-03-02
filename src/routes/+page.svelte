@@ -51,9 +51,13 @@
 			<Box fade>
 				<h3>Profile</h3>
 				<p>
-					I'm currently a Computer Science major at the University of
-					Pennsylvania. I'm a developer at <Link refer href="https://pennspark.org/">Penn Spark</Link>
-					and <Link refer href="https://www.thedp.com/">The Daily Pennsylvanian. </Link>
+					I'm currently a Computer & Information Science major at the University of
+					Pennsylvania. I'm a Front-end Developer at <Link
+						refer
+						href="https://pennlabs.org/">Penn Labs</Link
+					> and a Project Lead at <Link refer href="https://pennspark.org/"
+						>Penn Spark</Link
+					>
 				</p>
 			</Box>
 		</div>
@@ -65,7 +69,7 @@
 					C++, Java, JS/TS, HTML/CSS, C, Rust, Python, OCaml, and SQL
 					<br /><br />
 					<b>Technologies:</b>
-					Node.js, Svelte, React, Next.js, Vue, Firebase, Git, Linux.
+					Node.js, React, Next.js, Svelte, Firebase, Git, Linux, Docker
 				</p>
 			</Box>
 		</div>
