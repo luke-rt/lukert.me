@@ -13,8 +13,6 @@
 
 	let visible = false;
 	onMount(() => (visible = true));
-
-	// add view transition to contact card. have it travel into popup
 </script>
 
 <svelte:window bind:scrollY={ypos} bind:outerHeight={height} />
@@ -51,13 +49,11 @@
 			<Box fade>
 				<h3>Profile</h3>
 				<p>
-					I'm currently a Computer & Information Science major at the University of
-					Pennsylvania. I'm a Front-end Developer at <Link
-						refer
-						href="https://pennlabs.org/">Penn Labs</Link
-					> and a Project Lead at <Link refer href="https://pennspark.org/"
-						>Penn Spark</Link
-					>
+					I'm majoring in Computer Science and minoring in Math and Philosophy at the
+					University of Pennsylvania. I'm a Developer at
+					<Link refer href="https://pennlabs.org/">Penn Labs</Link>
+					and a Project Lead at
+					<Link refer href="https://pennspark.org/">Penn Spark</Link>
 				</p>
 			</Box>
 		</div>
@@ -69,7 +65,7 @@
 					C++, Java, JS/TS, HTML/CSS, C, Rust, Python, OCaml, and SQL
 					<br /><br />
 					<b>Technologies:</b>
-					Node.js, React, Next.js, Svelte, Firebase, Git, Linux, Docker
+					Node.js, AWS, React, Next.js, Git, Docker, Svelte, Firebase, Linux, Apache Spark
 				</p>
 			</Box>
 		</div>

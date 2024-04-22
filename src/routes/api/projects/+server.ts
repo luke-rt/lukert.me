@@ -3,8 +3,10 @@ import type { Project } from "$lib/types";
 
 export async function GET() {
 	const projects: Project[] = [];
+	// SocialCalender @ Penn
+	// Penn Course Review comments
 	// projects.push({
-	// 	title: "Penn Course Plan + Alert (Penn Labs Sprig 2024)",
+	// 	title: "Penn Course Plan + Alert (Penn Labs Spring 2024)",
 	// 	img: "sparkify.png",
 	// 	desc: "Integrates two previous Penn Labs products, Penn Course Alert (a place to sign up for alerts when a full course opens up) and Penn Course Plan (a mock schedule platform), into a single, unified platform for a more intuitive course shopping experience.",
 	// 	demo_url: "https://penncourseplan.com/",
