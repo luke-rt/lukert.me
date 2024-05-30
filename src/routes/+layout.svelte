@@ -28,7 +28,7 @@
 		<Link large dark={splash && !home} href="/">home</Link>
 		<!--<Link large dark={splash && !home} href="books">books</Link>-->
 		<Link large dark={splash && !home} href="projects">projects</Link>
-		<Link large refer dark={splash && !home} href="/LukeTong_Resume.pdf">resume</Link>
+		<Link large refer dark={splash && !home} href="/Resume_LukeTong.pdf">resume</Link>
 	</nav>
 </header>
 

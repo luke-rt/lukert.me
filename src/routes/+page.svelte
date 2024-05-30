@@ -36,9 +36,7 @@
 			<div>
 				<h2>Hi! Welcome to my blog!</h2>
 				<p>
-					I'm Luke, and I love reading and computer science.
-					<br />
-					I'm currently a freshmen at University of Pennsylvania.
+					I'm Luke, a sophomore at UPenn studying CS
 				</p>
 				<Spotify />
 			</div>
@@ -49,11 +47,14 @@
 			<Box fade>
 				<h3>Profile</h3>
 				<p>
-					I'm majoring in Computer Science and minoring in Math and Philosophy at the
-					University of Pennsylvania. I'm a Developer at
+					I'm majoring in Computer Science and minoring in Math and Philosophy at
+					<Link refer href="https://www.upenn.edu/">University of Pennsylvania</Link>.
+					I'm a Developer at
 					<Link refer href="https://pennlabs.org/">Penn Labs</Link>
 					and a Project Lead at
-					<Link refer href="https://pennspark.org/">Penn Spark</Link>
+					<Link refer href="https://pennspark.org/">Penn Spark</Link>.
+					I'm also a TA for
+					<Link refer href="https://www.cis.upenn.edu/~cis1600/current/staff.html">CIS 1600</Link>
 				</p>
 			</Box>
 		</div>
@@ -62,10 +63,10 @@
 				<h3>Skills</h3>
 				<p>
 					<b>Languages:</b>
-					C++, Java, JS/TS, HTML/CSS, C, Rust, Python, OCaml, and SQL
+					C++, Java, JS/TS, HTML/CSS, C, Rust, Python, OCaml, SQL
 					<br /><br />
 					<b>Technologies:</b>
-					Node.js, AWS, React, Next.js, Git, Docker, Svelte, Firebase, Linux, Apache Spark
+					Node.js, React, Next.js, AWS (RDS, EC2, Lambda, S3), Git, Docker, Supabase, Linux, Apache Spark
 				</p>
 			</Box>
 		</div>
