@@ -26,9 +26,8 @@
 <header class:transparent={splash}>
 	<nav>
 		<Link large dark={splash && !home} href="/">home</Link>
-		<!--<Link large dark={splash && !home} href="books">books</Link>-->
 		<Link large dark={splash && !home} href="projects">projects</Link>
-		<Link large refer dark={splash && !home} href="/Resume_LukeTong.pdf">resume</Link>
+		<Link large refer dark={splash && !home} href="/LukeTong_Resume.pdf">resume</Link>
 	</nav>
 </header>
 
@@ -66,7 +65,6 @@
 	<div>
 		<Link large dark refer href="https://github.com/luke-rt">Github</Link>
 		<Link large dark refer href="https://www.linkedin.com/in/luke-rt/">LinkedIn</Link>
-		<Link large dark refer href="https://www.goodreads.com/luke-rt">Goodreads</Link>
 	</div>
 	<p>Copyright © 2024 Luke Tong</p>
 </footer>

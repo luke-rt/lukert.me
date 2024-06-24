@@ -17,7 +17,7 @@
 	{#each data.projects as project, i}
 		<div class="line" />
 		<Box fade>
-			<Project right={i % 2 != 0} {project} />
+			<Project right={(i & 1) == 1} {project} />
 		</Box>
 	{/each}
 	<div class="line" />
