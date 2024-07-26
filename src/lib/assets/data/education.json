@@ -1,7 +1,7 @@
 [
 	{
 	  "title": "University of Pennsylvania",
-	  "img": "upenn.png",
+	  "img": "upenn.webp",
 	  "location": "Philadelphia, PA",
 	  "desc": "Bachelor's Degree in Computer Science (BSE)",
 	  "url": "https://www.upenn.edu/",
@@ -9,7 +9,7 @@
 	},
 	{
 	  "title": "Princeton High School",
-	  "img": "phs.png",
+	  "img": "phs.webp",
 	  "location": "Princeton, NJ",
 	  "desc": "High School Diploma",
 	  "url": "https://www.princetonk12.org/princeton-high-school",

@@ -132,7 +132,6 @@
 		.spotify {
 			margin-inline: auto;
 			margin-top: 20px;
-			/* width: 400px; */
 		}
 	}
 

@@ -5,7 +5,7 @@
 </script>
 
 <a class="item" href={item.url} target="_blank" rel="noopener noreferrer" >
-	<img src={`/items/${item.img}`} alt={`Item avatar for ${item.title}`} />
+	<img src={`/items/${item.img}`} width="40px" height="auto" alt={`Item avatar for ${item.title}`} />
 	<div class="info">
 		<b>
 			{item.title}
@@ -30,7 +30,6 @@
 		}
 
 		img {
-			width: 40px;
 			padding-inline: 10px;
 		}
 

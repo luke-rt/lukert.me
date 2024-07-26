@@ -30,19 +30,5 @@
         "img": "guess-the-number.png",
         "desc": "A bare metal, 32-bit kernel + custom bootloader written in C and Intel Assembly. All it does is play guess the number.",
         "src_url": "https://github.com/luke-rt/guess-the-number"
-    },
-    {
-        "title": "Penn Course Cart (SHOWCASE)",
-        "img": "penn-course-cart.png",
-        "desc": "A UI for picking and viewing courses. (Penn Labs Club Application)",
-        "demo_url": "https://pennlabs-frontend-challenge.vercel.app/",
-        "src_url": "https://github.com/luke-rt/pennlabs-frontend-challenge"
-    },
-    {
-        "title": "Under the Button quiz (SHOWCASE)",
-        "img": "dp-challenge.png",
-        "desc": "A UI for an interactive satirical quiz. (The DP Club Application)",
-        "demo_url": "https://dp-challenge.vercel.app/",
-        "src_url": "https://github.com/luke-rt/dp-challenge"
     }
 ]
