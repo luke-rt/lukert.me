@@ -7,6 +7,12 @@
 	import splash from "$lib/assets/splash.webp";
 	import Box from "$lib/components/Box.svelte";
 	import Link from "$lib/components/Link.svelte";
+	import Item from "$lib/components/Item.svelte";
+	import Badge from "$lib/components/Badge.svelte";
+
+	import work from "$lib/assets/data/work.json";
+	import education from "$lib/assets/data/education.json";
+	import skills from "$lib/assets/data/skills.json";
 
 	let ypos = 0;
 	let height = 1;
@@ -29,48 +35,57 @@
 	{/if}
 </section>
 
-<section id="about">
-	<Box fade>
-		<div class="top">
-			<img alt="Luke Tong" src={pfp} loading="lazy" />
-			<div>
-				<h2>Hi! Welcome to my blog!</h2>
-				<p>
-					I'm Luke, a sophomore at UPenn studying CS
-				</p>
-				<Spotify />
-			</div>
-		</div>
-	</Box>
-	<div class="bottom">
-		<div>
-			<Box fade>
-				<h3>Profile</h3>
-				<p>
-					I'm majoring in Computer Science and minoring in Math and Philosophy at
-					<Link refer href="https://www.upenn.edu/">University of Pennsylvania</Link>.
-					I'm a Developer at
-					<Link refer href="https://pennlabs.org/">Penn Labs</Link>
-					and a Project Lead at
-					<Link refer href="https://pennspark.org/">Penn Spark</Link>.
-					I'm also a TA for
-					<Link refer href="https://www.cis.upenn.edu/~cis1600/current/staff.html">CIS 1600</Link>
-				</p>
-			</Box>
-		</div>
-		<div>
-			<Box fade>
-				<h3>Skills</h3>
-				<p>
-					<b>Languages:</b>
-					C++, Java, JS/TS, HTML/CSS, C, Rust, Python, OCaml, SQL
-					<br /><br />
-					<b>Technologies:</b>
-					Node.js, React, Next.js, AWS (RDS, EC2, Lambda, S3), Git, Docker, Supabase, Linux, Apache Spark
-				</p>
-			</Box>
+<section id="profile">
+	<div>
+		<h1>Hi! I'm Luke</h1>
+		<p>
+			Software Engineer and Computer Science student at the University of Pennsylvania.
+			Developer at
+			<Link refer href="https://pennlabs.org/">Penn Labs</Link>
+			and Project Lead at
+			<Link refer href="https://pennspark.org/">Penn Spark</Link>.
+		</p>
+		<div class="spotify">
+			<Spotify />
 		</div>
 	</div>
+	<img alt="Luke Tong" src={pfp} loading="lazy" />
+</section>
+
+<section id="about">
+	<Box fade>
+		<div class="education">
+			<h2>Education</h2>
+			{#each education as item}
+				<Item {item} />
+			{/each}
+		</div>
+	</Box>
+
+	<Box fade>
+		<div class="work">
+			<h2>Work Experience</h2>
+			{#each work as item}
+				<Item {item} />
+			{/each}
+		</div>
+	</Box>
+
+	<Box fade>
+		<div class="skills">
+			<h2>Skills</h2>
+			{#each Object.entries(skills) as [category, items]}
+			<div>
+				<h3>{category}: </h3>
+				<div>
+					{#each items as item}
+						<Badge text={item} />
+					{/each}
+				</div>
+			</div>
+			{/each}
+		</div>
+	</Box>
 </section>
 
 <style lang="scss">
@@ -95,46 +110,47 @@
 		}
 	}
 
-	#about {
-		padding-block: 60px;
-		.top {
-			display: flex;
-			width: fit-content;
-			margin-inline: auto;
-			padding: 20px;
-			background-color: white;
+	#profile {
+		padding-top: 100px;
+		width: 700px;
+		margin-inline: auto;
+		display: flex;
 
-			box-shadow: 3px 3px 10px lightgray;
-			&:hover {
-				box-shadow: 6px 6px 10px lightgray;
-			}
-
-			img {
-				width: 180px;
-				height: 180px;
-				border-radius: 50%;
-				margin-right: 30px;
-				box-shadow: 3px 3px 5px gray;
-				object-fit: cover;
-			}
-
-			div > p {
-				margin-block: 15px;
-			}
+		img {
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			box-shadow: 3px 3px 5px gray;
+			object-fit: cover;
+			margin-block: auto;
 		}
-		.bottom {
-			display: flex;
-			flex-wrap: wrap;
 
-			padding-top: 30px;
-			width: 70vw;
+		div {
+			margin-block: auto;
+			margin-right: 30px;
+		}
+		.spotify {
 			margin-inline: auto;
+			margin-top: 20px;
+			/* width: 400px; */
+		}
+	}
 
-			& > div {
-				width: 460px;
-				height: 200px;
-				padding-inline: 20px;
-				margin-block: 2vh;
+	#about {
+		width: 600px;
+		margin-inline: auto;
+		margin-bottom: 100px;
+
+		h2 {
+			margin-top: 60px;
+		}
+		.skills {
+			div {
+				display: flex;
+				h3 {
+					margin-right: 10px;
+					margin-bottom: 10px;
+				}
 			}
 		}
 	}

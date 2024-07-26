@@ -27,8 +27,8 @@
 	div {
 		opacity: 0;
 		&.fade {
-			animation: fadeIn 1.5s;
-			animation-delay: 0.3s;
+			animation: fadeIn 1s;
+			/* animation-delay: 0.3s; */
 			animation-fill-mode: forwards;
 
 			@keyframes fadeIn {

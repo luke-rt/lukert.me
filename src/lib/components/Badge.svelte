@@ -1,0 +1,24 @@
+<script lang="ts">
+	export let text: string;
+</script>
+
+<div class="badge">
+	<small>
+		{text}
+	</small>
+</div>
+
+<style lang="scss">
+	.badge {
+		display: inline-block;
+		height: fit-content;
+		padding-bottom: 2px;
+		padding-inline: 10px;
+		border-radius: 20px;
+		background-color: $dark-2;
+		margin: 2px;
+		small {
+			color: white;
+		}
+	}
+</style>

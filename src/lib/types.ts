@@ -16,3 +16,12 @@ export type Project = {
 	src_url?: string;
 	demo_url?: string;
 };
+
+export type Item = {
+	title: string;
+	img: string;
+	location: string;
+	desc: string;
+	url: string;
+	date: string;
+}

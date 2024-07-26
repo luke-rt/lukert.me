@@ -1,0 +1,18 @@
+[
+	{
+	  "title": "University of Pennsylvania",
+	  "img": "upenn.png",
+	  "location": "Philadelphia, PA",
+	  "desc": "Bachelor's Degree in Computer Science (BSE)",
+	  "url": "https://www.upenn.edu/",
+	  "date": "2023 - PRESENT"
+	},
+	{
+	  "title": "Princeton High School",
+	  "img": "phs.png",
+	  "location": "Princeton, NJ",
+	  "desc": "High School Diploma",
+	  "url": "https://www.princetonk12.org/princeton-high-school",
+	  "date": "2019 - 2023"
+	}
+]

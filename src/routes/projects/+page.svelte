@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Box from "$lib/components/Box.svelte";
 	import Project from "$lib/components/Project.svelte";
-	export let data;
+	import projects from "$lib/assets/data/projects.json";
 </script>
 
 <svelte:head>
@@ -14,7 +14,7 @@
 </section>
 
 <section id="projects">
-	{#each data.projects as project, i}
+	{#each projects as project, i}
 		<div class="line" />
 		<Box fade>
 			<Project right={(i & 1) == 1} {project} />
