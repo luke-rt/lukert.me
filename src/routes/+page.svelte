@@ -42,7 +42,7 @@
 			Software Engineer and Computer Science student at the University of Pennsylvania.
 			Developer at
 			<Link refer href="https://pennlabs.org/">Penn Labs</Link>
-			and Project Lead at
+			and Social Chair at
 			<Link refer href="https://pennspark.org/">Penn Spark</Link>.
 		</p>
 		<div class="spotify">
