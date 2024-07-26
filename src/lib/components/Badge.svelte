@@ -18,6 +18,8 @@
 		background-color: $dark-2;
 		margin: 2px;
 		small {
+			font-family: "League Spartan", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+			Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;'
 			color: white;
 		}
 	}
