@@ -58,13 +58,17 @@
 			box-shadow: 6px 6px 10px lightgray;
 		}
 		div {
+			display: flex;
+			flex-direction: column;
 			h3 {
 				padding-bottom: 10px;
 			}
 			div {
+				flex-direction: row;
 				width: fit-content;
 				margin-inline: auto;
-				margin-top: 50px;
+				margin-bottom: 10px;
+				margin-top: auto;
 			}
 		}
 		img {
