@@ -45,9 +45,9 @@
 			and Social Chair at
 			<Link refer href="https://pennspark.org/">Penn Spark</Link>.
 		</p>
-		<div class="spotify">
+		<!-- <div class="spotify">
 			<Spotify />
-		</div>
+		</div> -->
 	</div>
 	<img alt="Luke Tong" src={pfp} loading="lazy" />
 </section>
