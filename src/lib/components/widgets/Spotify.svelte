@@ -3,7 +3,7 @@
 	import { truncate } from "$lib/utils";
 	import type { Track } from "$lib/types";
 
-	let track: Track;
+	let track: Track = $state();
 
 	onMount(async () => {
 		const response = await fetch(`/api/spotify`);
@@ -32,17 +32,17 @@
 					<sub>⊙ {truncate(track.album, 50)}</sub>
 				</div>
 			{:else}
-				<div class="default" />
+				<div class="default"></div>
 				<div class="track">
 					<p>Loading...</p>
 				</div>
 			{/if}
 		</div>
 		<div class="right">
-			<span class:one={track?.playing} />
-			<span class:two={track?.playing} />
-			<span class:three={track?.playing} />
-			<span class:four={track?.playing} />
+			<span class:one={track?.playing}></span>
+			<span class:two={track?.playing}></span>
+			<span class:three={track?.playing}></span>
+			<span class:four={track?.playing}></span>
 		</div>
 	</div>
 </a>

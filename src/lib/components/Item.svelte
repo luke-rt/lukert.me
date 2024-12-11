@@ -1,7 +1,11 @@
 <script lang="ts">
 	import type { Item } from "$lib/types";
 
-	export let item: Item;
+	interface Props {
+		item: Item;
+	}
+
+	let { item }: Props = $props();
 </script>
 
 <a class="item" href={item.url} target="_blank" rel="noopener noreferrer" >

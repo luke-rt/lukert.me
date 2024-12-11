@@ -3,10 +3,14 @@
 	import Link from "$lib/components/Link.svelte";
 	import { inview, type Options } from "svelte-inview";
 
-	export let project: Project;
-	export let right = false;
+	interface Props {
+		project: Project;
+		right?: boolean;
+	}
 
-	let isInView: boolean;
+	let { project, right = false }: Props = $props();
+
+	let isInView = $state(false);
 	const options: Options = {
 		rootMargin: "-50px",
 		unobserveOnEnter: true,
@@ -17,7 +21,7 @@
 	class:right
 	class:left={!right}
 	use:inview={options}
-	on:inview_enter={(event) => {
+	oninview_enter={(event) => {
 		const { inView } = event.detail;
 		isInView = inView;
 	}}
@@ -28,6 +32,9 @@
 		<div>
 			{#if project.demo_url}
 				<Link large refer href={project.demo_url}>Demo</Link>
+			{/if}
+			{#if project.site_url}
+				<Link large refer href={project.site_url}>Site</Link>
 			{/if}
 			{#if project.src_url}
 				<Link large refer href={project.src_url}>Source Code</Link>

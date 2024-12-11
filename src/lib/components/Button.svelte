@@ -1,15 +1,22 @@
 <script lang="ts">
+	import { preventDefault } from 'svelte/legacy';
+
 	import { createEventDispatcher } from "svelte";
 
-	export let disabled = false;
-	export let dark = false;
+	interface Props {
+		disabled?: boolean;
+		dark?: boolean;
+		children?: import('svelte').Snippet;
+	}
+
+	let { disabled = false, dark = false, children }: Props = $props();
 
 	const dispatch = createEventDispatcher();
 	const click = () => dispatch("click");
 </script>
 
-<button {disabled} class:disabled class:dark class="rounded" on:click|preventDefault={click}>
-	<slot />
+<button {disabled} class:disabled class:dark class="rounded" onclick={preventDefault(click)}>
+	{@render children?.()}
 </button>
 
 <style lang="scss">

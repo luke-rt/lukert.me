@@ -1,8 +1,19 @@
 <script lang="ts">
-	export let href: string;
-	export let refer = false;
-	export let large = false;
-	export let dark = false;
+	interface Props {
+		href: string;
+		refer?: boolean;
+		large?: boolean;
+		dark?: boolean;
+		children?: import('svelte').Snippet;
+	}
+
+	let {
+		href,
+		refer = false,
+		large = false,
+		dark = false,
+		children
+	}: Props = $props();
 </script>
 
 <a
@@ -12,7 +23,7 @@
 	class:large
 	class:dark
 >
-	<slot />
+	{@render children?.()}
 </a>
 
 <style lang="scss">

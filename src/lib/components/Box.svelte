@@ -1,9 +1,14 @@
 <script lang="ts">
 	import { inview, type Options } from "svelte-inview";
 
-	export let fade: boolean;
+	interface Props {
+		fade: boolean;
+		children?: import('svelte').Snippet;
+	}
 
-	let isInView: boolean;
+	let { fade, children }: Props = $props();
+
+	let isInView: boolean = $state();
 	const options: Options = {
 		rootMargin: "-100px",
 		unobserveOnEnter: true,
@@ -13,13 +18,13 @@
 {#if fade}
 	<div
 		use:inview={options}
-		on:inview_enter={(event) => {
+		oninview_enter={(event) => {
 			const { inView } = event.detail;
 			isInView = inView;
 		}}
 		class:fade={isInView && fade}
 	>
-		<slot />
+		{@render children?.()}
 	</div>
 {/if}
 

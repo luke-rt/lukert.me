@@ -14,6 +14,7 @@ export type Project = {
 	img: string;
 	desc: string;
 	src_url?: string;
+	site_url?: string;
 	demo_url?: string;
 };
 

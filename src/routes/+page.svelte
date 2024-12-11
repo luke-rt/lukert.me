@@ -2,7 +2,6 @@
 	import { onMount } from "svelte";
 	import { fade } from "svelte/transition";
 	import { typewriter } from "$lib/utils";
-	import Spotify from "$lib/components/widgets/Spotify.svelte";
 	import pfp from "$lib/assets/pfp.webp";
 	import splash from "$lib/assets/splash.webp";
 	import Box from "$lib/components/Box.svelte";
@@ -14,10 +13,10 @@
 	import education from "$lib/assets/data/education.json";
 	import skills from "$lib/assets/data/skills.json";
 
-	let ypos = 0;
-	let height = 1;
+	let ypos = $state(0);
+	let height = $state(1);
 
-	let visible = false;
+	let visible = $state(false);
 	onMount(() => (visible = true));
 </script>
 
@@ -30,8 +29,8 @@
 <section id="splash">
 	<img alt="Splash screen" src={splash} loading="eager" />
 	{#if visible}
-		<h1 transition:fade={{ duration: 1000, delay: 500 }}>Luke Tong</h1>
-		<h2 transition:typewriter={{ delay: 1500 }}>Full-Stack Developer</h2>
+		<h1 transition:fade={{ duration: 750, delay: 250 }}>Luke Tong</h1>
+		<h2 transition:typewriter={{ delay: 1000 }}>Full-Stack Developer</h2>
 	{/if}
 </section>
 
@@ -128,10 +127,6 @@
 		div {
 			margin-block: auto;
 			margin-right: 30px;
-		}
-		.spotify {
-			margin-inline: auto;
-			margin-top: 20px;
 		}
 	}
 

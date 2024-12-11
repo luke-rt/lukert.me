@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import "../app.scss";
 	import { slide } from "svelte/transition";
 	import { circInOut } from "svelte/easing";
@@ -8,17 +10,27 @@
 	import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
 	import Link from "$lib/components/Link.svelte";
 	import logo from "$lib/assets/logo.svg";
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 
 	// vercel stuff
 	inject({ mode: dev ? "development" : "production" });
 	injectSpeedInsights();
 
-	let ypos = 0;
-	let height = 151;
+	let ypos = $state(0);
+	let height = $state(151);
 
-	$: splash = ypos < height - 125;
-	$: home = $page.url.pathname == "/";
-	$: if (!home) splash = ypos < height * 0.75 - 125;
+	let splash;
+	run(() => {
+		splash = ypos < height - 125;
+	});
+	let home = $derived($page.url.pathname == "/");
+	run(() => {
+		if (!home) splash = ypos < height * 0.75 - 125;
+	});
 </script>
 
 <svelte:window bind:scrollY={ypos} bind:outerHeight={height} />
@@ -41,7 +53,7 @@
 				easing: circInOut,
 			}}
 			class="transition black"
-		/>
+		></div>
 		<div
 			out:slide={{
 				axis: "x",
@@ -50,10 +62,10 @@
 				easing: circInOut,
 			}}
 			class="transition red"
-		/>
+		></div>
 	{/if}
 	<main>
-		<slot />
+		{@render children?.()}
 	</main>
 {/key}
 
