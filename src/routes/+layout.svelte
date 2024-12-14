@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
 	import "../app.scss";
 	import { slide } from "svelte/transition";
 	import { circInOut } from "svelte/easing";
@@ -10,6 +8,7 @@
 	import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
 	import Link from "$lib/components/Link.svelte";
 	import logo from "$lib/assets/logo.svg";
+
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
