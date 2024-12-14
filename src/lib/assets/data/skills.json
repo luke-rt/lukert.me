@@ -1,35 +1,17 @@
 {
-    "Languages": [
-        "Java",
-        "Python",
-        "C",
-        "C++",
-        "SQL",
-        "JavaScript/TypeScript",
-        "Rust",
-        "Go",
-        "HTML/CSS",
-        "Ruby"
-    ],
-    "Frameworks": [
-        "React",
-        "Node.js",
-        "Django",
-        "Next.js",
-        "Rails"
-    ],
-    "Tools": [
-        "Git",
-        "Docker",
-        "AWS CDK",
-        "Linux"
-    ],
-    "Libraries": [
-        "PyTorch",
-        "OpenAI",
-        "Pillow",
-        "numpy",
-        "Matplotlib",
-        "Apache Spark"
-    ]
+	"Languages": [
+		"Java",
+		"Python",
+		"C",
+		"C++",
+		"SQL",
+		"JavaScript/TypeScript",
+		"Rust",
+		"Go",
+		"HTML/CSS",
+		"Ruby"
+	],
+	"Frameworks": ["React", "Node.js", "Django", "Next.js", "Rails"],
+	"Tools": ["Git", "Docker", "AWS CDK", "Linux", "Terraform", "Kubernetes"],
+	"Libraries": ["PyTorch", "OpenAI", "Pillow", "numpy", "Matplotlib", "Apache Spark"]
 }
