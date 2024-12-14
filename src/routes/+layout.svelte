@@ -23,14 +23,8 @@
 	let ypos = $state(0);
 	let height = $state(151);
 
-	let splash;
-	run(() => {
-		splash = ypos < height - 125;
-	});
 	let home = $derived($page.url.pathname == "/");
-	run(() => {
-		if (!home) splash = ypos < height * 0.75 - 125;
-	});
+	let splash = $derived(home ? ypos < height - 125 : ypos < height * 0.75 - 125);
 </script>
 
 <svelte:window bind:scrollY={ypos} bind:outerHeight={height} />
