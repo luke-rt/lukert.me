@@ -1,17 +1,18 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-	import { fade } from "svelte/transition";
-	import { typewriter } from "$lib/utils";
-	import pfp from "$lib/assets/pfp.webp";
-	import splash from "$lib/assets/splash.webp";
-	import Box from "$lib/components/Box.svelte";
-	import Link from "$lib/components/Link.svelte";
-	import Item from "$lib/components/Item.svelte";
-	import Badge from "$lib/components/Badge.svelte";
+	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
+	import { typewriter } from '$lib/utils';
+	import pfp from '$lib/assets/pfp.webp';
+	import splash from '$lib/assets/splash.webp';
+	import Box from '$lib/components/Box.svelte';
+	import Link from '$lib/components/Link.svelte';
+	import Item from '$lib/components/Item.svelte';
+	import Badge from '$lib/components/Badge.svelte';
 
-	import work from "$lib/assets/data/work.json";
-	import education from "$lib/assets/data/education.json";
-	import skills from "$lib/assets/data/skills.json";
+	import work from '$lib/assets/data/work.json';
+	import education from '$lib/assets/data/education.json';
+	import skills from '$lib/assets/data/skills.json';
+	import current from '$lib/assets/data/current.json';
 
 	let ypos = $state(0);
 	let height = $state(1);
@@ -38,8 +39,8 @@
 	<div>
 		<h1>Hi! I'm Luke</h1>
 		<p>
-			Software Engineer and Computer Science student at the University of Pennsylvania.
-			Developer at
+			Software Engineer and Computer Science student at the University of Pennsylvania. Team
+			Lead at
 			<Link refer href="https://pennlabs.org/">Penn Labs</Link>
 			and Social Chair at
 			<Link refer href="https://pennspark.org/">Penn Spark</Link>.
@@ -71,17 +72,29 @@
 	</Box>
 
 	<Box fade>
+		<div class="current">
+			<h2>What I'm working on</h2>
+			{#each current as project}
+				<Box fade>
+					<h3>{project.title}</h3>
+					<p>{project.desc}</p>
+				</Box>
+			{/each}
+		</div>
+	</Box>
+
+	<Box fade>
 		<div class="skills">
 			<h2>Skills</h2>
 			{#each Object.entries(skills) as [category, items]}
-			<div>
-				<h3>{category}: </h3>
 				<div>
-					{#each items as item}
-						<Badge text={item} />
-					{/each}
+					<h3>{category}:</h3>
+					<div>
+						{#each items as item}
+							<Badge text={item} />
+						{/each}
+					</div>
 				</div>
-			</div>
 			{/each}
 		</div>
 	</Box>
@@ -111,7 +124,7 @@
 
 	#profile {
 		padding-top: 100px;
-		width: 700px;
+		width: 800px;
 		margin-inline: auto;
 		display: flex;
 
@@ -131,7 +144,7 @@
 	}
 
 	#about {
-		width: 600px;
+		width: 750px;
 		margin-inline: auto;
 		margin-bottom: 100px;
 
@@ -145,6 +158,11 @@
 					margin-right: 10px;
 					margin-bottom: 10px;
 				}
+			}
+		}
+		.current {
+			h3 {
+				margin-top: 20px;
 			}
 		}
 	}

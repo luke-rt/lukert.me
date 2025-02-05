@@ -1,18 +1,18 @@
 [
 	{
-	  "title": "University of Pennsylvania",
-	  "img": "upenn.webp",
-	  "location": "Philadelphia, PA",
-	  "desc": "Undergraduate Teaching Assistant (CIS 1600)",
-	  "url": "https://www.cis.upenn.edu/~cis1600/current/",
-	  "date": "August 2024 - PRESENT"
+		"title": "University of Pennsylvania",
+		"img": "upenn.webp",
+		"location": "Philadelphia, PA",
+		"desc": "Undergraduate Teaching Assistant (CIS 1600)",
+		"url": "https://www.cis.upenn.edu/~cis1600/current/",
+		"date": "August 2024 - PRESENT"
 	},
 	{
-	  "title": "TelVue Corporation",
-	  "img": "telvue.webp",
-	  "location": "Mt. Laurel, NJ",
-	  "desc": "SWE Intern",
-	  "url": "https://telvue.com/",
-	  "date": "June 2024 - August 2024"
+		"title": "TelVue Corporation",
+		"img": "telvue.webp",
+		"location": "Mt. Laurel, NJ",
+		"desc": "SWE Intern",
+		"url": "https://telvue.com/",
+		"date": "June 2024 - August 2024"
 	}
 ]

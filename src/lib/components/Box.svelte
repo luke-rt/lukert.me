@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { inview, type Options } from "svelte-inview";
+	import { inview, type Options } from 'svelte-inview';
 
 	interface Props {
 		fade: boolean;
@@ -8,10 +8,10 @@
 
 	let { fade, children }: Props = $props();
 
-	let isInView: boolean = $state();
+	let isInView: boolean = $state(false);
 	const options: Options = {
-		rootMargin: "-100px",
-		unobserveOnEnter: true,
+		rootMargin: '-100px',
+		unobserveOnEnter: true
 	};
 </script>
 

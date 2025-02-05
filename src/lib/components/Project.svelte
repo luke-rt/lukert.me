@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { Project } from "$lib/types";
-	import Link from "$lib/components/Link.svelte";
-	import { inview, type Options } from "svelte-inview";
+	import type { Project } from '$lib/types';
+	import Link from '$lib/components/Link.svelte';
+	import { inview, type Options } from 'svelte-inview';
 
 	interface Props {
 		project: Project;
@@ -12,8 +12,8 @@
 
 	let isInView = $state(false);
 	const options: Options = {
-		rootMargin: "-50px",
-		unobserveOnEnter: true,
+		rootMargin: '-50px',
+		unobserveOnEnter: true
 	};
 </script>
 
@@ -41,7 +41,7 @@
 			{/if}
 		</div>
 	</div>
-	{#if isInView}
+	{#if isInView && project.img}
 		<img
 			src={`/projects/${project.img}`}
 			alt={`Preview image for project ${project.title}`}
@@ -60,7 +60,7 @@
 		padding: 20px;
 		margin-left: 75px;
 
-		box-shadow: 3px 3px 10px lightgray;
+		box-shadow: 2px 2px 8px lightgray;
 		&:hover {
 			box-shadow: 6px 6px 10px lightgray;
 		}

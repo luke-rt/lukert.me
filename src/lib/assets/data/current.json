@@ -1,0 +1,14 @@
+[
+	{
+		"title": "PokerZero",
+		"desc": "A reasoning model built off TinyZero specialized for no-limit texas hold'em, leveraging PPO reinforcement learning and Monte Carlo Tree Search. Built using veRL and PyTorch."
+	},
+	{
+		"title": "Oat Compiler",
+		"desc": "Fully functional compiler to x86 assembly for Oat, a simple typed, object-oriented programming language. Written in OCaml and featuring a custom LLVM-based IR, control flow analysis and optimizations."
+	},
+	{
+		"title": "1 Million Checkboxes",
+		"desc": "Clone of 1 million checkboxes, synced for all users in real time. Leverages Redis, Golang, EC2 and uses web concurrency techniques to scale indefinitely."
+	}
+]

@@ -25,4 +25,4 @@ export type Item = {
 	desc: string;
 	url: string;
 	date: string;
-}
+};

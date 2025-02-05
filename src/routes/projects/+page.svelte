@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Box from "$lib/components/Box.svelte";
-	import Project from "$lib/components/Project.svelte";
-	import projects from "$lib/assets/data/projects.json";
+	import Box from '$lib/components/Box.svelte';
+	import Project from '$lib/components/Project.svelte';
+	import projects from '$lib/assets/data/projects.json';
 </script>
 
 <svelte:head>
@@ -33,7 +33,7 @@
 			margin-inline: auto;
 			color: gainsboro;
 			&::after {
-				content: "";
+				content: '';
 				background-color: lightgray;
 				position: relative;
 				display: block;

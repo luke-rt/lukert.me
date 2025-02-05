@@ -1,13 +1,13 @@
-import { json, error } from "@sveltejs/kit";
+import { json, error } from '@sveltejs/kit';
 import {
 	SPOTIFY_CLIENT_ID,
 	SPOTIFY_CLIENT_SECRET,
-	SPOTIFY_REFRESH_TOKEN,
-} from "$env/static/private";
+	SPOTIFY_REFRESH_TOKEN
+} from '$env/static/private';
 
-const NOW_PLAYING_ENDPOINT = "https://api.spotify.com/v1/me/player/currently-playing";
-const RECENTLY_PLAYED_ENDPOINT = "https://api.spotify.com/v1/me/player/recently-played ";
-const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
+const NOW_PLAYING_ENDPOINT = 'https://api.spotify.com/v1/me/player/currently-playing';
+const RECENTLY_PLAYED_ENDPOINT = 'https://api.spotify.com/v1/me/player/recently-played ';
+const TOKEN_ENDPOINT = 'https://accounts.spotify.com/api/token';
 
 export async function GET() {
 	const { access_token } = await getAccessToken();
@@ -22,7 +22,7 @@ export async function GET() {
 		response = await getItem(RECENTLY_PLAYED_ENDPOINT, access_token);
 		// make this return an actual error
 		if (response.status === 204 || response.status > 400)
-			return error(500, "Error fetching from spotify api");
+			return error(500, 'Error fetching from spotify api');
 
 		const recently_played = await response.json();
 		track_item = recently_played.items[0].track;
@@ -30,11 +30,11 @@ export async function GET() {
 		// if request succeeds
 		const now_playing = await response.json();
 
-		if (now_playing.currently_playing_type != "track") {
+		if (now_playing.currently_playing_type != 'track') {
 			// if now_playing is a podcast, etc
 			response = await getItem(RECENTLY_PLAYED_ENDPOINT, access_token);
 			if (response.status === 204 || response.status > 400)
-				return error(500, "Error fetching from spotify api");
+				return error(500, 'Error fetching from spotify api');
 
 			const recently_played = await response.json();
 			track_item = recently_played.items[0].track;
@@ -54,22 +54,22 @@ export async function GET() {
 		album_img: track_item.album.images[0].url,
 		duration: track_item.duration_ms,
 		progress: progress_ms,
-		playing: is_playing,
+		playing: is_playing
 	});
 }
 
 async function getAccessToken() {
 	const params = new URLSearchParams();
-	params.append("grant_type", "refresh_token");
-	params.append("refresh_token", SPOTIFY_REFRESH_TOKEN);
+	params.append('grant_type', 'refresh_token');
+	params.append('refresh_token', SPOTIFY_REFRESH_TOKEN);
 
 	const response = await fetch(TOKEN_ENDPOINT, {
-		method: "POST",
+		method: 'POST',
 		headers: {
 			Authorization: `Basic ${btoa(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`)}`,
-			"Content-Type": "application/x-www-form-urlencoded",
+			'Content-Type': 'application/x-www-form-urlencoded'
 		},
-		body: params,
+		body: params
 	});
 	return response.json();
 }
@@ -77,8 +77,8 @@ async function getAccessToken() {
 async function getItem(endpoint: string, access_token: string) {
 	const response = fetch(endpoint, {
 		headers: {
-			Authorization: `Bearer ${access_token}`,
-		},
+			Authorization: `Bearer ${access_token}`
+		}
 	});
 
 	return response;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Item } from "$lib/types";
+	import type { Item } from '$lib/types';
 
 	interface Props {
 		item: Item;
@@ -8,8 +8,13 @@
 	let { item }: Props = $props();
 </script>
 
-<a class="item" href={item.url} target="_blank" rel="noopener noreferrer" >
-	<img src={`/items/${item.img}`} width="40px" height="auto" alt={`Item avatar for ${item.title}`} />
+<a class="item" href={item.url} target="_blank" rel="noopener noreferrer">
+	<img
+		src={`/items/${item.img}`}
+		width="40px"
+		height="auto"
+		alt={`Item avatar for ${item.title}`}
+	/>
 	<div class="info">
 		<b>
 			{item.title}

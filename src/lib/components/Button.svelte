@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { preventDefault } from 'svelte/legacy';
 
-	import { createEventDispatcher } from "svelte";
+	import { createEventDispatcher } from 'svelte';
 
 	interface Props {
 		disabled?: boolean;
@@ -12,7 +12,7 @@
 	let { disabled = false, dark = false, children }: Props = $props();
 
 	const dispatch = createEventDispatcher();
-	const click = () => dispatch("click");
+	const click = () => dispatch('click');
 </script>
 
 <button {disabled} class:disabled class:dark class="rounded" onclick={preventDefault(click)}>
@@ -28,8 +28,19 @@
 		height: 2em;
 		line-height: 2em;
 
-		font-family: "League Spartan", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-			Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+		font-family:
+			'League Spartan',
+			-apple-system,
+			BlinkMacSystemFont,
+			Segoe UI,
+			Roboto,
+			Oxygen,
+			Ubuntu,
+			Cantarell,
+			Fira Sans,
+			Droid Sans,
+			Helvetica Neue,
+			sans-serif;
 		font-weight: 600;
 		font-size: 1.2em;
 

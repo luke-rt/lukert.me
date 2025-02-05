@@ -40,7 +40,7 @@
 	{
 		"title": "Guess the Number OS (Kernel)",
 		"img": "guess-the-number.png",
-		"desc": "A bare metal, 32-bit kernel + custom bootloader written in C and Intel Assembly. All it does is play guess the number.",
+		"desc": "A bare metal, 32-bit kernel + custom bootloader written in C and Intel x86. All it does is play guess the number.",
 		"src_url": "https://github.com/luke-rt/guess-the-number"
 	}
 ]

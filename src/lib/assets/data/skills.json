@@ -9,9 +9,11 @@
 		"Rust",
 		"Go",
 		"HTML/CSS",
-		"Ruby"
+		"Ruby",
+		"OCaml",
+		"x86"
 	],
 	"Frameworks": ["React", "Node.js", "Django", "Next.js", "Rails"],
-	"Tools": ["Git", "Docker", "AWS CDK", "Linux", "Terraform", "Kubernetes"],
-	"Libraries": ["PyTorch", "OpenAI", "Pillow", "numpy", "Matplotlib", "Apache Spark"]
+	"Tools": ["Git", "Docker", "AWS CDK", "Linux", "Terraform", "Kubernetes", "Rocq"],
+	"Libraries": ["PyTorch", "Pillow", "numpy", "Matplotlib", "Apache Spark", "LLVM"]
 }

@@ -1,13 +1,13 @@
 <script lang="ts">
-	import "../app.scss";
-	import { slide } from "svelte/transition";
-	import { circInOut } from "svelte/easing";
-	import { page, navigating } from "$app/stores";
-	import { dev } from "$app/environment";
-	import { inject } from "@vercel/analytics";
-	import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
-	import Link from "$lib/components/Link.svelte";
-	import logo from "$lib/assets/logo.svg";
+	import '../app.scss';
+	import { slide } from 'svelte/transition';
+	import { circInOut } from 'svelte/easing';
+	import { page, navigating } from '$app/stores';
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
+	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+	import Link from '$lib/components/Link.svelte';
+	import logo from '$lib/assets/logo.svg';
 
 	interface Props {
 		children?: import('svelte').Snippet;
@@ -16,13 +16,13 @@
 	let { children }: Props = $props();
 
 	// vercel stuff
-	inject({ mode: dev ? "development" : "production" });
+	inject({ mode: dev ? 'development' : 'production' });
 	injectSpeedInsights();
 
 	let ypos = $state(0);
 	let height = $state(151);
 
-	let home = $derived($page.url.pathname == "/");
+	let home = $derived($page.url.pathname == '/');
 	let splash = $derived(ypos < height * (home ? 1 : 0.75) - 125);
 </script>
 
@@ -40,19 +40,19 @@
 	{#if $navigating}
 		<div
 			out:slide={{
-				axis: "x",
+				axis: 'x',
 				duration: 500,
 				delay: 300,
-				easing: circInOut,
+				easing: circInOut
 			}}
 			class="transition black"
 		></div>
 		<div
 			out:slide={{
-				axis: "x",
+				axis: 'x',
 				duration: 500,
 				delay: 500,
-				easing: circInOut,
+				easing: circInOut
 			}}
 			class="transition red"
 		></div>

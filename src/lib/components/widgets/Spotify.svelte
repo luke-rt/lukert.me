@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-	import { truncate } from "$lib/utils";
-	import type { Track } from "$lib/types";
+	import { onMount } from 'svelte';
+	import { truncate } from '$lib/utils';
+	import type { Track } from '$lib/types';
 
 	let track: Track = $state();
 
@@ -26,7 +26,7 @@
 						{/if}
 					</p>
 					<b>{truncate(track.name, 20)}&nbsp • &nbsp</b><span
-						>{truncate(track.artists.join(", "), 20)}</span
+						>{truncate(track.artists.join(', '), 20)}</span
 					>
 					<br />
 					<sub>⊙ {truncate(track.album, 50)}</sub>

@@ -7,19 +7,13 @@
 		children?: import('svelte').Snippet;
 	}
 
-	let {
-		href,
-		refer = false,
-		large = false,
-		dark = false,
-		children
-	}: Props = $props();
+	let { href, refer = false, large = false, dark = false, children }: Props = $props();
 </script>
 
 <a
 	{href}
-	target={refer ? "_blank" : undefined}
-	rel={refer ? "noopener noreferrer" : undefined}
+	target={refer ? '_blank' : undefined}
+	rel={refer ? 'noopener noreferrer' : undefined}
 	class:large
 	class:dark
 >
@@ -35,13 +29,14 @@
 		font-weight: 600;
 
 		&:after {
-			content: " ";
+			content: ' ';
 			background-color: $dark-2;
 			position: absolute;
 			display: block;
 			width: 0%;
 			left: 50%;
-			transition: left 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
+			transition:
+				left 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
 				width 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
 		}
 		&:hover {
@@ -56,8 +51,19 @@
 
 	a.large {
 		color: $dark-1;
-		font-family: "League Spartan", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-			Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+		font-family:
+			'League Spartan',
+			-apple-system,
+			BlinkMacSystemFont,
+			Segoe UI,
+			Roboto,
+			Oxygen,
+			Ubuntu,
+			Cantarell,
+			Fira Sans,
+			Droid Sans,
+			Helvetica Neue,
+			sans-serif;
 		font-size: 1.4em;
 		margin-block: 15px;
 		margin-inline: 25px;
