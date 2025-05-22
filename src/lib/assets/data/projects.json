@@ -1,5 +1,10 @@
 [
 	{
+		"title": "Oat Compiler",
+		"img": "ocaml.png",
+		"desc": "Fully functional compiler to x86 assembly from Oat, a simply typed language featuring functions/lambdas, structs, arrays, and strings. Features a type checker, parser, and custom codegeneration to/from LLVM IR. Used basic dataflow analyses to implement optimizations like dead code elimination, constant propogation, register allocation, and more."
+	},
+	{
 		"title": "Penn Course Review",
 		"img": "pcr.png",
 		"desc": "Maintaining and adding features (Comments, static rendering) to the official course review platform for the University of Pennsylvania. ",

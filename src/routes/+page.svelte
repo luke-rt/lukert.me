@@ -41,9 +41,7 @@
 		<p>
 			Software Engineer and Computer Science student at the University of Pennsylvania. Team
 			Lead at
-			<Link refer href="https://pennlabs.org/">Penn Labs</Link>
-			and Social Chair at
-			<Link refer href="https://pennspark.org/">Penn Spark</Link>.
+			<Link refer href="https://pennlabs.org/">Penn Labs</Link>. I'm currently doing research on polyhedral compiler optimizations in LLVM.
 		</p>
 		<!-- <div class="spotify">
 			<Spotify />
