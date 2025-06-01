@@ -41,7 +41,7 @@
 		<p>
 			Software Engineer and Computer Science student at the University of Pennsylvania. Team
 			Lead at
-			<Link refer href="https://pennlabs.org/">Penn Labs</Link>. I'm currently doing research on polyhedral compiler optimizations in LLVM.
+			<Link refer href="https://pennlabs.org/">Penn Labs</Link>. I'm currently doing research on compilers for opportunistically parallel programming languages
 		</p>
 		<!-- <div class="spotify">
 			<Spotify />

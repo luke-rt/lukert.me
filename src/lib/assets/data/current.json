@@ -1,7 +1,7 @@
 [
 	{
-		"title": "PokerZero",
-		"desc": "A reasoning model built off TinyZero specialized for no-limit texas hold'em, leveraging PPO reinforcement learning and Monte Carlo Tree Search. Built using veRL and PyTorch."
+		"title": "Opportunistic Parallellism in PL",
+		"desc": "Work on a compiler from a subset of Python to a low-level functional IR, with the ability to evaluate in parallel while conserving programmer intent."
 	},
 	{
 		"title": "1 Million Checkboxes",
