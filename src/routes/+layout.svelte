@@ -71,7 +71,7 @@
 		<Link large dark refer href="https://github.com/luke-rt">Github</Link>
 		<Link large dark refer href="https://www.linkedin.com/in/luke-rt/">LinkedIn</Link>
 	</div>
-	<p>Copyright © 2024 Luke Tong</p>
+	<p>Copyright © 2025 Luke Tong</p>
 </footer>
 
 <style lang="scss">
