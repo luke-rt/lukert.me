@@ -1,6 +1,6 @@
 [
 	{
-		"title": "Opportunistic Parallellism in PL",
+		"title": "Opportunistic Parallelism in PL",
 		"desc": "Work on a compiler from a subset of Python to a low-level functional IR, with the ability to evaluate in parallel while conserving programmer intent."
 	},
 	{
