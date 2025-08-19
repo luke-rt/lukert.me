@@ -22,9 +22,11 @@
 		<br />
 		<sub>{item.desc}</sub>
 	</div>
+	{#if item.date}
 	<div class="date">
 		<small>{item.date}</small>
 	</div>
+	{/if}
 </a>
 
 <style lang="scss">

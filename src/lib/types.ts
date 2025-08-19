@@ -24,5 +24,5 @@ export type Item = {
 	location: string;
 	desc: string;
 	url: string;
-	date: string;
+	date?: string;
 };

@@ -43,8 +43,8 @@
 		<p>
 			Software Engineer and Computer Science student at the University of Pennsylvania. Team
 			Lead at
-			<Link refer href="https://pennlabs.org/">Penn Labs</Link>. I'm an incoming SWE Intern at
-			IMC Trading.
+			<Link refer href="https://pennlabs.org/">Penn Labs</Link>. I'll be a SWE Intern at
+			IMC Trading next summer.
 		</p>
 		<div class="spotify">
 			<Spotify />
@@ -142,7 +142,7 @@
 			margin-right: 30px;
 		}
 		.spotify {
-			margin-top: 10px;
+			margin-top: 30px;
 		}
 	}
 
