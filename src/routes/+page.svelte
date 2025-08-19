@@ -8,11 +8,13 @@
 	import Link from '$lib/components/Link.svelte';
 	import Item from '$lib/components/Item.svelte';
 	import Badge from '$lib/components/Badge.svelte';
+	import Project from '$lib/components/Project.svelte';
 
 	import work from '$lib/assets/data/work.json';
 	import education from '$lib/assets/data/education.json';
 	import skills from '$lib/assets/data/skills.json';
 	import current from '$lib/assets/data/current.json';
+	import Spotify from '$lib/components/widgets/Spotify.svelte';
 
 	let ypos = $state(0);
 	let height = $state(1);
@@ -41,11 +43,12 @@
 		<p>
 			Software Engineer and Computer Science student at the University of Pennsylvania. Team
 			Lead at
-			<Link refer href="https://pennlabs.org/">Penn Labs</Link>. I'm currently doing research on compilers for opportunistically parallel programming languages
+			<Link refer href="https://pennlabs.org/">Penn Labs</Link>. I'm an incoming SWE Intern at
+			IMC Trading.
 		</p>
-		<!-- <div class="spotify">
+		<div class="spotify">
 			<Spotify />
-		</div> -->
+		</div>
 	</div>
 	<img alt="Luke Tong" src={pfp} loading="lazy" />
 </section>
@@ -54,7 +57,7 @@
 	<Box fade>
 		<div class="education">
 			<h2>Education</h2>
-			{#each education as item}
+			{#each education as item (item.url)}
 				<Item {item} />
 			{/each}
 		</div>
@@ -63,32 +66,31 @@
 	<Box fade>
 		<div class="work">
 			<h2>Work Experience</h2>
-			{#each work as item}
+			{#each work as item (item.url)}
 				<Item {item} />
 			{/each}
 		</div>
 	</Box>
 
-	<Box fade>
-		<div class="current">
+	<div class="current">
+		{#if current.length > 0}
 			<h2>What I'm working on</h2>
-			{#each current as project}
-				<Box fade>
-					<h3>{project.title}</h3>
-					<p>{project.desc}</p>
-				</Box>
-			{/each}
-		</div>
-	</Box>
+		{/if}
+		{#each current as project, i (i)}
+			<Box fade>
+				<Project {project} />
+			</Box>
+		{/each}
+	</div>
 
 	<Box fade>
 		<div class="skills">
 			<h2>Skills</h2>
-			{#each Object.entries(skills) as [category, items]}
+			{#each Object.entries(skills) as [category, items], i (i)}
 				<div>
 					<h3>{category}:</h3>
 					<div>
-						{#each items as item}
+						{#each items as item, j (j)}
 							<Badge text={item} />
 						{/each}
 					</div>
@@ -139,6 +141,9 @@
 			margin-block: auto;
 			margin-right: 30px;
 		}
+		.spotify {
+			margin-top: 10px;
+		}
 	}
 
 	#about {
@@ -159,7 +164,7 @@
 			}
 		}
 		.current {
-			h3 {
+			h2 {
 				margin-top: 20px;
 			}
 		}

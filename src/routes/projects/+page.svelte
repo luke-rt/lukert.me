@@ -14,7 +14,7 @@
 </section>
 
 <section id="projects">
-	{#each projects as project, i}
+	{#each projects as project, i (project.title)}
 		<div class="line"></div>
 		<Box fade>
 			<Project right={(i & 1) == 1} {project} />

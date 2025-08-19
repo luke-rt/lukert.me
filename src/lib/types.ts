@@ -11,7 +11,7 @@ export type Track = {
 
 export type Project = {
 	title: string;
-	img: string;
+	img?: string;
 	desc: string;
 	src_url?: string;
 	site_url?: string;

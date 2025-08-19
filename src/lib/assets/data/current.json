@@ -1,10 +1,1 @@
-[
-	{
-		"title": "Opportunistic Parallelism in PL",
-		"desc": "Work on a compiler from a subset of Python to a low-level functional IR, with the ability to evaluate in parallel while conserving programmer intent."
-	},
-	{
-		"title": "1 Million Checkboxes",
-		"desc": "Clone of 1 million checkboxes, synced for all users in real time. Leverages Redis, Golang, EC2 and uses web concurrency techniques to scale indefinitely."
-	}
-]
+[]

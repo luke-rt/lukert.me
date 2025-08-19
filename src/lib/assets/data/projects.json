@@ -1,5 +1,10 @@
 [
 	{
+		"title": "Opportunistic Parallelism in PL",
+		"desc": "Compiler from a subset of Python to a low-level lambda calculus based functional IR, with the ability to evaluate in parallel while conserving programmer intent. IR features include static single assignment and church encoded conditionals, control flow, and booleans. Achieved significant performance gains on real-world scripts, reducing latency by 12.7x and running time by 6.2x. Related publication below:",
+		"site_url": "https://arxiv.org/abs/2405.11361"
+	},
+	{
 		"title": "Oat Compiler",
 		"img": "ocaml.png",
 		"desc": "Fully functional compiler to x86 assembly from Oat, a simply typed language featuring functions/lambdas, structs, arrays, and strings. Features a type checker, parser, and custom codegeneration to/from LLVM IR. Used basic dataflow analyses to implement optimizations like dead code elimination, constant propogation, register allocation, and more."

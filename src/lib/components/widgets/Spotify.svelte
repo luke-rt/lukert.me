@@ -3,7 +3,7 @@
 	import { truncate } from '$lib/utils';
 	import type { Track } from '$lib/types';
 
-	let track: Track = $state();
+	let track: Track | undefined = $state();
 
 	onMount(async () => {
 		const response = await fetch(`/api/spotify`);
