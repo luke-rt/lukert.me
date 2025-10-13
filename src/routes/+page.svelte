@@ -7,12 +7,10 @@
 	import Box from '$lib/components/Box.svelte';
 	import Link from '$lib/components/Link.svelte';
 	import Item from '$lib/components/Item.svelte';
-	import Badge from '$lib/components/Badge.svelte';
 	import Project from '$lib/components/Project.svelte';
 
 	import work from '$lib/assets/data/work.json';
 	import education from '$lib/assets/data/education.json';
-	import skills from '$lib/assets/data/skills.json';
 	import current from '$lib/assets/data/current.json';
 	import Spotify from '$lib/components/widgets/Spotify.svelte';
 
@@ -44,7 +42,7 @@
 			Software Engineer and Computer Science student at the University of Pennsylvania. Team
 			Lead at
 			<Link refer href="https://pennlabs.org/">Penn Labs</Link>. I'll be a SWE Intern at
-			<Link refer href="https://www.imc.com/us">IMC Trading</Link> next summer.
+			<!-- <Link refer href="https://www.imc.com/us">IMC Trading</Link> next summer. -->
 		</p>
 		<div class="spotify">
 			<Spotify />
@@ -82,22 +80,6 @@
 			</Box>
 		{/each}
 	</div>
-
-	<Box fade>
-		<div class="skills">
-			<h2>Skills</h2>
-			{#each Object.entries(skills) as [category, items], i (i)}
-				<div>
-					<h3>{category}:</h3>
-					<div>
-						{#each items as item, j (j)}
-							<Badge text={item} />
-						{/each}
-					</div>
-				</div>
-			{/each}
-		</div>
-	</Box>
 </section>
 
 <style lang="scss">
@@ -153,15 +135,6 @@
 
 		h2 {
 			margin-top: 60px;
-		}
-		.skills {
-			div {
-				display: flex;
-				h3 {
-					margin-right: 10px;
-					margin-bottom: 10px;
-				}
-			}
 		}
 		.current {
 			h2 {
