@@ -41,7 +41,7 @@
 		<p>
 			Software Engineer and Computer Science student at the University of Pennsylvania. Team
 			Lead at
-			<Link refer href="https://pennlabs.org/">Penn Labs</Link>. I'll be a SWE Intern at
+			<Link refer href="https://pennlabs.org/">Penn Labs</Link>.
 			<!-- <Link refer href="https://www.imc.com/us">IMC Trading</Link> next summer. -->
 		</p>
 		<div class="spotify">
