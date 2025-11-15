@@ -1,6 +1,0 @@
-{
-	"Languages": ["Java", "Python", "C", "C++", "SQL", "TypeScript", "Rust", "Go", "OCaml", "x86"],
-	"Frameworks": ["React", "Node.js", "Django", "Next.js", "Rails"],
-	"Tools": ["Git", "Docker", "AWS CDK", "Linux", "Terraform", "Kubernetes"],
-	"Libraries": ["PyTorch", "Pillow", "numpy", "Matplotlib", "Apache Spark", "LLVM"]
-}

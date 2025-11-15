@@ -31,6 +31,7 @@
 <header class:transparent={splash}>
 	<nav>
 		<Link large dark={splash && !home} href="/">home</Link>
+		<Link large dark={splash && !home} href="about">about</Link>
 		<Link large dark={splash && !home} href="projects">projects</Link>
 		<Link large refer dark={splash && !home} href="/LukeTong_Resume.pdf">resume</Link>
 	</nav>

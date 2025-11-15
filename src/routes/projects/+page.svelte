@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Home | Luke Tong's Website</title>
+	<title>Projects | Luke Tong's Website</title>
 	<meta name="description" content="Some projects I've worked on in the past!" />
 </svelte:head>
 
