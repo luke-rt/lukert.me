@@ -39,14 +39,15 @@
 	<div>
 		<h1>Hi! I'm Luke</h1>
 		<p>
-			Software Engineer and Computer Science student at the University of Pennsylvania. Team
+			Software Engineer and Computer Science student at the University of Pennsylvania. I'm a Team
 			Lead at
-			<Link refer href="https://pennlabs.org/">Penn Labs</Link>.
-			<!-- <Link refer href="https://www.imc.com/us">IMC Trading</Link> next summer. -->
+			<Link refer href="https://pennlabs.org/">Penn Labs</Link> and a CIS 3200 Teaching Assistant.
+			I will be a Software Engineering Intern at
+			<Link refer href="https://www.imc.com/us">IMC Trading</Link> next summer.
 		</p>
-		<!-- <div class="spotify">
+		<div class="spotify">
 			<Spotify />
-		</div> -->
+		</div>
 	</div>
 	<img alt="Luke Tong" src={pfp} loading="lazy" />
 </section>
@@ -89,7 +90,6 @@
 			height: 100vh;
 			object-fit: cover;
 		}
-
 		h1,
 		h2 {
 			color: $dark-1;
