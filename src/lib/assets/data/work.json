@@ -3,13 +3,13 @@
 		"title": "University of Pennsylvania",
 		"img": "upenn.webp",
 		"location": "Philadelphia, PA",
-		"desc": "Teaching Assistant (CIS 1600)",
-		"url": "https://penn-repl.github.io/",
+		"desc": "Teaching Assistant (CIS 3200)",
+		"url": "https://catalog.upenn.edu/courses/cis/",
 		"date": "January 2026 - PRESENT"
 	},
 	{
 		"title": "University of Pennsylvania",
-		"img": "upenn.webp",
+		"img": "plclub.webp",
 		"location": "Philadelphia, PA",
 		"desc": "Research Intern (Compilers)",
 		"url": "https://penn-repl.github.io/",
