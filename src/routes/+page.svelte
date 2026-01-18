@@ -31,7 +31,7 @@
 	<img alt="Splash screen" src={splash} loading="eager" />
 	{#if visible}
 		<h1 transition:fade={{ duration: 750, delay: 250 }}>Luke Tong</h1>
-		<h2 transition:typewriter={{ delay: 1000 }}>Full-Stack Developer</h2>
+		<h2 transition:typewriter={{ delay: 1000 }}>Software Engineer</h2>
 	{/if}
 </section>
 
@@ -41,9 +41,10 @@
 		<p>
 			Software Engineer and Computer Science student at the University of Pennsylvania. I'm a Team
 			Lead at
-			<Link refer href="https://pennlabs.org/">Penn Labs</Link> and a CIS 3200 Teaching Assistant.
+			<Link refer href="https://pennlabs.org/">Penn Labs</Link> and a CIS 3200 Teaching Assistant,
+			and I'm interested in systems engineering and low-latency software.
 			I will be a Software Engineering Intern at
-			<Link refer href="https://www.imc.com/us">IMC Trading</Link> next summer.
+			<Link refer href="https://www.imc.com/us">IMC Trading</Link> this summer.
 		</p>
 		<!-- <div class="spotify">
 			<Spotify />
