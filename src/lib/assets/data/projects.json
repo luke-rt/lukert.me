@@ -1,5 +1,9 @@
 [
 	{
+		"title": "Penn OS",
+		"desc": "A single-threaded OS abstraction with kernel, priority scheduler, FAT-like filesystem, and process control blocks. Maintain kernel-user separation through system call interfaces for file I/O, permissions, and process management. Simulates context-switching and pre-emptive multitasking through thread suspension."
+	},
+	{
 		"title": "Opportunistic Parallelism in PL",
 		"desc": "Compiler from a subset of Python to a low-level lambda calculus based functional IR, with the ability to evaluate in parallel while conserving programmer intent. IR features include static single assignment and church encoded conditionals, control flow, and booleans. Achieved significant performance gains on real-world scripts, reducing latency by 12.7x and running time by 6.2x. Related publication below:",
 		"site_url": "https://arxiv.org/abs/2405.11361"

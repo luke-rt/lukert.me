@@ -45,9 +45,9 @@
 			I will be a Software Engineering Intern at
 			<Link refer href="https://www.imc.com/us">IMC Trading</Link> next summer.
 		</p>
-		<div class="spotify">
+		<!-- <div class="spotify">
 			<Spotify />
-		</div>
+		</div> -->
 	</div>
 	<img alt="Luke Tong" src={pfp} loading="lazy" />
 </section>
