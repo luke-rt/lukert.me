@@ -1,11 +1,28 @@
 [
 	{
+		"title": "Distributed Cloud",
+		"img": "cpp.png",
+		"desc": "Distributed cloud services including heirarchical file storage, user accounts, and email. Implemented over a fault tolerant, distributed key-value store inspired by Google Bigtable."
+	},
+	{
+		"title": "RISC-V Processor",
+		"img": "riscv.png",
+		"desc": "A 6-stage pipelined processor written in SystemVerilog with support for the RV32UI instruction set. Compatible with a simplified AXI-Lite memory interface. 28.27 MHz on the dhrystone synthetic computing benchmark."
+	},
+	{
+		"title": "txv6",
+		"desc": "An extension of the xv6 operating system, a simple Unix-like OS used for educational purposes, with OS-level transaction primitives based on TxOS (SOSP 2009). Featuring atomic commit/abort for groups of system calls, implemented in C and RISC-V assembly.",
+		"src_url": "https://github.com/luke-rt/txv6"
+	},
+	{
 		"title": "Penn OS",
-		"desc": "A single-threaded OS abstraction with kernel, priority scheduler, FAT-like filesystem, and process control blocks. Maintain kernel-user separation through system call interfaces for file I/O, permissions, and process management. Simulates context-switching and pre-emptive multitasking through thread suspension."
+		"img": "c.png",
+		"desc": "A single-threaded OS abstraction with kernel, priority scheduler, FAT-like filesystem, and process control blocks."
 	},
 	{
 		"title": "Opportunistic Parallelism in PL",
-		"desc": "Compiler from a subset of Python to a low-level lambda calculus based functional IR, with the ability to evaluate in parallel while conserving programmer intent. IR features include static single assignment and church encoded conditionals, control flow, and booleans. Achieved significant performance gains on real-world scripts, reducing latency by 12.7x and running time by 6.2x. Related publication below:",
+		"img": "lambda.png",
+		"desc": "Proof of concept compiler from a subset of Python to a lambda calculus based functional IR. Parallelizes computation opportunistically while preserving programmer intent. Related publication below:",
 		"site_url": "https://arxiv.org/abs/2405.11361"
 	},
 	{
@@ -16,7 +33,7 @@
 	{
 		"title": "Penn Course Review",
 		"img": "pcr.png",
-		"desc": "Maintaining and adding features (Comments, static rendering) to the official course review platform for the University of Pennsylvania. ",
+		"desc": "Maintain and serve as team lead for the official course review platform for the University of Pennsylvania. ",
 		"site_url": "https://penncoursereview.com/",
 		"src_url": "https://github.com/pennlabs/penn-courses"
 	},
