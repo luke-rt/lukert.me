@@ -1,10 +1,10 @@
 {
-  "redirects": [
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
     {
       "source": "/:path*",
-      "destination": "https://example.com",
-      "has": [{ "type": "host", "value": "rpi.lukert.me" }],
-      "permanent": false
+      "destination": "https://rpi.tail9f4875.ts.net/:path*",
+      "has": [{ "type": "host", "value": "rpi.lukert.me" }]
     }
   ]
 }
