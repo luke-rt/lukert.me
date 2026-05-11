@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "https://rpi.tail9f4875.ts.net/:path*",
+      "has": [{ "type": "host", "value": "rpi.lukert.me" }]
+    }
+  ]
+}
