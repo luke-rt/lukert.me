@@ -40,8 +40,7 @@
 		<p>
 			Software Engineer and Computer Science student at the University of Pennsylvania. I'm a
 			CIS 3200 Teaching Assistant, and I'm interested in systems engineering and low-latency
-			software. I will be a Software Engineering Intern at
-			<Link refer href="https://www.imc.com/us">IMC Trading</Link> this summer.
+			software.
 		</p>
 		<!-- <div class="spotify">
 			<Spotify />
