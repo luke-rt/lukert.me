@@ -12,7 +12,6 @@
 	import work from '$lib/assets/data/work.json';
 	import education from '$lib/assets/data/education.json';
 	import current from '$lib/assets/data/current.json';
-	import Spotify from '$lib/components/widgets/Spotify.svelte';
 
 	let ypos = $state(0);
 	let height = $state(1);
@@ -39,11 +38,9 @@
 	<div>
 		<h1>Hi! I'm Luke</h1>
 		<p>
-			Software Engineer and Computer Science student at the University of Pennsylvania. I'm a Team
-			Lead at
-			<Link refer href="https://pennlabs.org/">Penn Labs</Link> and a CIS 3200 Teaching Assistant,
-			and I'm interested in systems engineering and low-latency software.
-			I will be a Software Engineering Intern at
+			Software Engineer and Computer Science student at the University of Pennsylvania. I'm a
+			CIS 3200 Teaching Assistant, and I'm interested in systems engineering and low-latency
+			software. I will be a Software Engineering Intern at
 			<Link refer href="https://www.imc.com/us">IMC Trading</Link> this summer.
 		</p>
 		<!-- <div class="spotify">
@@ -124,9 +121,9 @@
 			margin-block: auto;
 			margin-right: 30px;
 		}
-		.spotify {
-			margin-top: 30px;
-		}
+		// .spotify {
+		// 	margin-top: 30px;
+		// }
 	}
 
 	#about {
